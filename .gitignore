@@ -1,0 +1,22 @@
+# Editor directories and files
+.vscode/*
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Dependency directories
+node_modules
+
+# Testing
+coverage
+
+# Pnpm
+.pnpm-debug.log
+
+# Production files
+dist
+temp

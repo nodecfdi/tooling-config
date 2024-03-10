@@ -1,0 +1,43 @@
+{
+  "name": "@nodecfdi/tooling-configs",
+  "version": "1.0.0",
+  "description": "Tooling configs for NodeCfdi projects",
+  "keywords": [
+    "tooling",
+    "nodecfdi",
+    "lint",
+    "formatter"
+  ],
+  "private": true,
+  "author": "Fernando Isidro <luffynando@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "prepare": "is-in-ci || husky",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.0.3",
+    "@commitlint/config-conventional": "^19.0.3",
+    "@nodecfdi/prettier-config": "workspace:*",
+    "eslint": "^8.57.0",
+    "husky": "^9.0.11",
+    "is-in-ci": "^0.1.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.2"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "typescript",
+        "prettier"
+      ]
+    }
+  },
+  "prettier": "@nodecfdi/prettier-config",
+  "engines": {
+    "node": ">=20.6"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "@nodecfdi/prettier-config",
+  "version": "1.0.0",
+  "description": "Prettier config for NodeCfdi projects",
+  "keywords": [
+    "prettier",
+    "nodecfdi"
+  ],
+  "private": false,
+  "author": "Fernando Isidro <luffynando@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "main": "./prettier.config.js",
+  "exports": {
+    ".": "./prettier.config.js"
+  },
+  "scripts": {}
+}
