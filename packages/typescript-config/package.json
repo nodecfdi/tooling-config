@@ -1,0 +1,18 @@
+{
+  "name": "@nodecfdi/tsconfig",
+  "version": "1.0.0",
+  "description": "Base typescript configuration files for NodeCfdi projects",
+  "keywords": [
+    "tsconfig",
+    "typescript",
+    "nodecfdi"
+  ],
+  "private": false,
+  "author": "Fernando Isidro <luffynando@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "./tsconfig.base.json": "./tsconfig.base.json"
+  },
+  "scripts": {}
+}

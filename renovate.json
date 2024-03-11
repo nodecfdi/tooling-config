@@ -1,0 +1,17 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:js-lib",
+    "schedule:earlyMondays"
+  ],
+  "rangeStrategy": "replace",
+  "labels": ["dependencies"],
+  "timezone": "America/Mexico_City",
+  "ignoreDeps": [],
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["eslint"],
+      "labels": ["linting"]
+    }
+  ]
+}
