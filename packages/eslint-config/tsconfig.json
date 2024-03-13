@@ -1,0 +1,6 @@
+{
+  "extends": "@nodecfdi/tsconfig/tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": "."
+  }
+}

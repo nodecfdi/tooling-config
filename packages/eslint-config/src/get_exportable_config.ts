@@ -1,0 +1,79 @@
+import eslintConfigPrettier from 'eslint-config-prettier';
+import getGitignorePatterns from 'eslint-config-flat-gitignore';
+import { type ExportableConfigAtom, type NodecfdiSettings } from './types/index.ts';
+import { ignores, supportedFileTypes } from './configs/constants.ts';
+import { getVitestConfig } from './configs/vitest_config.ts';
+import { getTypescriptConfig } from './configs/typescript_config.ts';
+import { getTsdocConfig } from './configs/tsdoc_config.ts';
+import { getEslintBaseConfig } from './configs/eslint_base_config.ts';
+import { getStylisticConfig } from './configs/stylistic_config.ts';
+import { getEarlyReturnConfig } from './configs/early_return_config.ts';
+import { getUnicornConfig } from './configs/unicorn_config.ts';
+import { getSonarjsConfig } from './configs/sonarjs_config.ts';
+import { getArrowReturnStyleConfig } from './configs/arrow_return_style_config.ts';
+import { getImportConfig } from './configs/import_config.ts';
+
+const prettierOverrides = {
+  files: [supportedFileTypes],
+  rules: {
+    curly: ['error', 'all'],
+  },
+};
+
+export const getExportableConfig = (userConfigChoices?: NodecfdiSettings) => {
+  userConfigChoices = userConfigChoices ?? {
+    vitest: true,
+  };
+
+  let exportableConfig: ExportableConfigAtom[] = [];
+  exportableConfig.push(...getTypescriptConfig(userConfigChoices));
+  exportableConfig.push(getTsdocConfig());
+  exportableConfig.push(getEslintBaseConfig());
+  exportableConfig.push(getStylisticConfig());
+  exportableConfig.push(getEarlyReturnConfig());
+  exportableConfig.push(getUnicornConfig());
+  exportableConfig.push(getSonarjsConfig());
+  exportableConfig.push(getArrowReturnStyleConfig());
+  exportableConfig.push(...getImportConfig());
+
+  if (userConfigChoices.vitest) {
+    exportableConfig.push(getVitestConfig(userConfigChoices.pathsOveriddes?.tests));
+  }
+
+  exportableConfig.push(eslintConfigPrettier);
+  exportableConfig.push(prettierOverrides);
+
+  if (userConfigChoices.files) {
+    const allowedPatterns = userConfigChoices.files.map((globPattern) => `!${globPattern}`);
+
+    exportableConfig = exportableConfig.map((configSlice) => {
+      if (configSlice.ignores?.length && configSlice.ignores.length > 0) {
+        return configSlice;
+      }
+
+      return {
+        ...configSlice,
+        ignores: ['**/*', ...allowedPatterns],
+      };
+    });
+  }
+
+  const hasIgnoresRecommended =
+    userConfigChoices.ignores?.recommended !== undefined
+      ? userConfigChoices.ignores.recommended
+      : true;
+
+  const hasIgnoresInheritedFromGitIgnore =
+    userConfigChoices.ignores?.inheritedFromGitignore !== undefined
+      ? userConfigChoices.ignores.inheritedFromGitignore
+      : true;
+
+  exportableConfig.push({
+    ignores: [
+      ...(hasIgnoresRecommended ? ignores : []),
+      ...(hasIgnoresInheritedFromGitIgnore ? getGitignorePatterns({ strict: false }).ignores : []),
+    ],
+  });
+
+  return exportableConfig;
+};
