@@ -1,5 +1,6 @@
 import vitest from 'eslint-plugin-vitest';
 import { allJsExtensions } from './constants.ts';
+import { type ExportableConfigAtom } from '../types/index.ts';
 
 const vitestHandPickedRules = {
   ...vitest.configs.recommended.rules,
@@ -35,7 +36,7 @@ const vitestHandPickedRules = {
   'vitest/require-top-level-describe': 'error',
 };
 
-export const getVitestConfig = (pathsOverrides?: string[]) => {
+export const getVitestConfig = (pathsOverrides?: string[]): ExportableConfigAtom => {
   return {
     files: pathsOverrides ?? [
       `**/*.{test,spec}.{${allJsExtensions}}`,

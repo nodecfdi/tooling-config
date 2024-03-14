@@ -36,15 +36,15 @@ export interface NodecfdiSettings {
 }
 
 export type Plugins =
-  | {
-      [key: string]:
-        | {
-            files?: string[];
-            rules?: unknown;
-            configs?: unknown;
-          }
-        | undefined;
-    }
+  | Record<
+      string,
+      | {
+          files?: string[];
+          rules?: unknown;
+          configs?: unknown;
+        }
+      | undefined
+    >
   | null
   | undefined;
 
@@ -55,5 +55,8 @@ export interface ExportableConfigAtom {
   languageOptions?: Record<string, unknown>;
   settings?: Record<string, unknown>;
   ignores?: string[];
-  linterOptions?: { noInlineConfig?: boolean; reportUnusedDisableDirectives?: 'error' | 'warn' | 'off' };
+  linterOptions?: {
+    noInlineConfig?: boolean;
+    reportUnusedDisableDirectives?: 'error' | 'warn' | 'off';
+  };
 }

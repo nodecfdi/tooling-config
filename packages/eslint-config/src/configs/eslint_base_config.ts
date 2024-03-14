@@ -1,3 +1,5 @@
+/* eslint-disable sonarjs/no-duplicate-string */
+import { type ExportableConfigAtom } from '../types/index.ts';
 import { supportedFileTypes } from './constants.ts';
 
 const eslintBaseHandPickedRules = {
@@ -103,7 +105,7 @@ const eslintBaseHandPickedRules = {
   'arrow-body-style': 'off', // we are using the eslint-plugin-arrow-return-style version
 };
 
-export const getEslintBaseConfig = () => {
+export const getEslintBaseConfig = (): ExportableConfigAtom => {
   return {
     files: [supportedFileTypes],
     rules: eslintBaseHandPickedRules,

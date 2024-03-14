@@ -123,7 +123,6 @@ const typescriptHandPickedRules = {
   '@typescript-eslint/no-empty-function': 'error',
   '@typescript-eslint/prefer-optional-chain': 'error',
   '@typescript-eslint/dot-notation': 'error',
-  '@typescript-eslint/no-import-type-side-effects': 'error',
   '@typescript-eslint/default-param-last': 'error',
   '@typescript-eslint/no-shadow': [
     'error',
@@ -140,6 +139,19 @@ export const getTypescriptConfig = (
   userConfigChoices: NodecfdiSettings,
 ): ExportableConfigAtom[] => {
   const customTSConfigPath = userConfigChoices.pathsOveriddes?.tsconfigLocation;
+  const tseslintConfigs = [
+    ...tseslint.configs.strictTypeChecked,
+    ...tseslint.configs.stylisticTypeChecked,
+  ];
+  const rules = tseslintConfigs.map((config) => config.rules ?? {});
+  let tseslintRules = {};
+
+  for (const rule of rules) {
+    tseslintRules = {
+      ...tseslintRules,
+      ...rule,
+    };
+  }
 
   return [
     {
@@ -148,12 +160,15 @@ export const getTypescriptConfig = (
     },
     {
       files: [`**/*.{${allJsExtensions}}`],
+      plugins: {
+        '@typescript-eslint': tseslint.plugin,
+      },
       languageOptions: getLanguageOptionsTypescript(customTSConfigPath),
     },
     {
       files: [supportedFileTypes],
-      ...tseslint.configs.strictTypeChecked,
       rules: {
+        ...tseslintRules,
         ...typescriptHandPickedRules,
         ...tsNamingConventionRule,
       },

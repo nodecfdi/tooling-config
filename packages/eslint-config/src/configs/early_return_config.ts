@@ -1,7 +1,8 @@
 import preferEarlyReturn from '@regru/eslint-plugin-prefer-early-return';
 import { supportedFileTypes } from './constants.ts';
+import { type ExportableConfigAtom } from '../types/index.ts';
 
-export const getEarlyReturnConfig = () => {
+export const getEarlyReturnConfig = (): ExportableConfigAtom => {
   return {
     files: [supportedFileTypes],
     plugins: { '@regru/prefer-early-return': preferEarlyReturn },

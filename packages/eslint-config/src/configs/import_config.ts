@@ -1,5 +1,5 @@
 import pluginImport from 'eslint-plugin-import';
-import { ExportableConfigAtom } from '../types/index.ts';
+import { type ExportableConfigAtom } from '../types/index.ts';
 import { allJsExtensions, supportedFileTypes } from './constants.ts';
 
 const importHandPickedRules = {};

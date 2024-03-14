@@ -11,15 +11,26 @@
   "author": "Fernando Isidro <luffynando@gmail.com>",
   "license": "MIT",
   "type": "module",
-  "main": "./prettier.config.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
-    ".": "./prettier.config.js"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    }
   },
-  "scripts": {},
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc && tsup"
+  },
   "devDependencies": {
     "@nodecfdi/tsconfig": "workspace:*",
     "@types/eslint-config-prettier": "^6.11.3",
-    "@types/eslint__js": "^8.42.3"
+    "@types/eslint__js": "^8.42.3",
+    "tsup": "^8.0.2"
   },
   "dependencies": {
     "@eslint/js": "^8.57.0",

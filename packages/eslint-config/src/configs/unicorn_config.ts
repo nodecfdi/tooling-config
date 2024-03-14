@@ -1,5 +1,6 @@
 import unicorn from 'eslint-plugin-unicorn';
 import { supportedFileTypes } from './constants.ts';
+import { type ExportableConfigAtom } from '../types/index.ts';
 
 const unicornHandPickedRules = {
   'unicorn/better-regex': 'error',
@@ -43,7 +44,7 @@ const unicornHandPickedRules = {
   'unicorn/prefer-string-slice': 'error',
 };
 
-export const getUnicornConfig = () => {
+export const getUnicornConfig = (): ExportableConfigAtom => {
   return {
     files: [supportedFileTypes],
     plugins: { unicorn },

@@ -20,28 +20,30 @@ const prettierOverrides = {
   },
 };
 
-export const getExportableConfig = (userConfigChoices?: NodecfdiSettings) => {
-  userConfigChoices = userConfigChoices ?? {
+export const getExportableConfig = (
+  userConfigPrefers?: NodecfdiSettings,
+): ExportableConfigAtom[] => {
+  const userConfigChoices = userConfigPrefers ?? {
     vitest: true,
   };
 
-  let exportableConfig: ExportableConfigAtom[] = [];
-  exportableConfig.push(...getTypescriptConfig(userConfigChoices));
-  exportableConfig.push(getTsdocConfig());
-  exportableConfig.push(getEslintBaseConfig());
-  exportableConfig.push(getStylisticConfig());
-  exportableConfig.push(getEarlyReturnConfig());
-  exportableConfig.push(getUnicornConfig());
-  exportableConfig.push(getSonarjsConfig());
-  exportableConfig.push(getArrowReturnStyleConfig());
-  exportableConfig.push(...getImportConfig());
+  let exportableConfig: ExportableConfigAtom[] = [
+    ...getTypescriptConfig(userConfigChoices),
+    getTsdocConfig(),
+    getEslintBaseConfig(),
+    getStylisticConfig(),
+    getEarlyReturnConfig(),
+    getUnicornConfig(),
+    getSonarjsConfig(),
+    getArrowReturnStyleConfig(),
+    ...getImportConfig(),
+  ];
 
   if (userConfigChoices.vitest) {
     exportableConfig.push(getVitestConfig(userConfigChoices.pathsOveriddes?.tests));
   }
 
-  exportableConfig.push(eslintConfigPrettier);
-  exportableConfig.push(prettierOverrides);
+  exportableConfig.push(eslintConfigPrettier, prettierOverrides);
 
   if (userConfigChoices.files) {
     const allowedPatterns = userConfigChoices.files.map((globPattern) => `!${globPattern}`);
@@ -59,14 +61,14 @@ export const getExportableConfig = (userConfigChoices?: NodecfdiSettings) => {
   }
 
   const hasIgnoresRecommended =
-    userConfigChoices.ignores?.recommended !== undefined
-      ? userConfigChoices.ignores.recommended
-      : true;
+    userConfigChoices.ignores?.recommended === undefined
+      ? true
+      : userConfigChoices.ignores.recommended;
 
   const hasIgnoresInheritedFromGitIgnore =
-    userConfigChoices.ignores?.inheritedFromGitignore !== undefined
-      ? userConfigChoices.ignores.inheritedFromGitignore
-      : true;
+    userConfigChoices.ignores?.inheritedFromGitignore === undefined
+      ? true
+      : userConfigChoices.ignores.inheritedFromGitignore;
 
   exportableConfig.push({
     ignores: [
