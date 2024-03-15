@@ -11,19 +11,19 @@
 ### NPM
 
 ```shell
-npm i -D @nodecfdi/tsconfig
+npm i -D typescript @nodecfdi/tsconfig
 ```
 
 ### Yarn
 
 ```shell
-yarn add -D @nodecfdi/tsconfig
+yarn add -D typescript @nodecfdi/tsconfig
 ```
 
 ### PNPM
 
 ```shell
-pnpm add -D @nodecfdi/tsconfig
+pnpm add -D typescript @nodecfdi/tsconfig
 ```
 
 ## Uso básico
@@ -33,8 +33,5 @@ Si tu estás creando un proyecto NodeCfdi, deberás de extender del archivo `tsc
 ```json
 {
   "extends": "@nodecfdi/tsconfig/tsconfig.base.json",
-  "compilerOptions": {
-    "baseUrl": "."
-  }
 }
 ```

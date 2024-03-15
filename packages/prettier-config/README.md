@@ -11,19 +11,19 @@
 ### NPM
 
 ```shell
-npm i -D @nodecfdi/prettier-config
+npm i -D prettier @nodecfdi/prettier-config
 ```
 
 ### Yarn
 
 ```shell
-yarn add -D @nodecfdi/prettier-config
+yarn add -D prettier @nodecfdi/prettier-config
 ```
 
 ### PNPM
 
 ```shell
-pnpm add -D @nodecfdi/prettier-config
+pnpm add -D prettier @nodecfdi/prettier-config
 ```
 
 ## Uso básico
