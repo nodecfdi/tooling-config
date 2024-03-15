@@ -1,3 +1,4 @@
+declare module '@eslint-community/eslint-plugin-eslint-comments';
 declare module '@regru/eslint-plugin-prefer-early-return';
 declare module 'eslint-plugin-canonical';
 declare module 'eslint-plugin-unicorn';

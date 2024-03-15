@@ -2,6 +2,7 @@ import getGitignorePatterns from 'eslint-config-flat-gitignore';
 import eslintConfigPrettier from 'eslint-config-prettier';
 import { getArrowReturnStyleConfig } from './configs/arrow_return_style_config.ts';
 import { getCanonicalConfig } from './configs/canonical_config.ts';
+import { getCommentsConfig } from './configs/comments_config.ts';
 import { ignores, supportedFileTypes } from './configs/constants.ts';
 import { getEarlyReturnConfig } from './configs/early_return_config.ts';
 import { getEslintBaseConfig } from './configs/eslint_base_config.ts';
@@ -43,6 +44,7 @@ export const getExportableConfig = (
     getSonarjsConfig(),
     getArrowReturnStyleConfig(),
     ...getImportConfig(),
+    getCommentsConfig(),
   ];
 
   if (userConfigChoices.vitest) {
