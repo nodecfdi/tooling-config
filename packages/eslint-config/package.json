@@ -26,6 +26,11 @@
   "scripts": {
     "build": "tsc && tsup"
   },
+  "repository": "https://github.com/nodecfdi/tooling-config",
+  "bugs": {
+    "url": "https://github.com/nodecfdi/tooling-config/issues"
+  },
+  "homepage": "https://github.com/nodecfdi/tooling-config",
   "devDependencies": {
     "@nodecfdi/tsconfig": "workspace:*",
     "@types/eslint-config-prettier": "^6.11.3",

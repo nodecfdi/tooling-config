@@ -14,5 +14,13 @@
   "exports": {
     "./tsconfig.base.json": "./tsconfig.base.json"
   },
-  "scripts": {}
+  "files": [
+    "tsconfig.base.json"
+  ],
+  "scripts": {},
+  "repository": "https://github.com/nodecfdi/tooling-config",
+  "bugs": {
+    "url": "https://github.com/nodecfdi/tooling-config/issues"
+  },
+  "homepage": "https://github.com/nodecfdi/tooling-config"
 }
