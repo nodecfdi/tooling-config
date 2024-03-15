@@ -9,7 +9,7 @@ const importHandPickedRules = {
   'import/no-named-as-default-member': 'off',
   'import/no-unresolved': ['error', { commonjs: true, caseSensitiveStrict: true }],
   'import/first': 'error',
-  'import/order': ['error', { 'newlines-between': 'never' }],
+  'import/order': 'off',
   'import/no-default-export': 'error',
   'import/no-named-as-default': 'error',
   'import/no-duplicates': ['error', { 'prefer-inline': true }],
