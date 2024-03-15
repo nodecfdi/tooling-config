@@ -32,6 +32,6 @@ Si tu estás creando un proyecto NodeCfdi, deberás de extender del archivo `tsc
 
 ```json
 {
-  "extends": "@nodecfdi/tsconfig/tsconfig.base.json",
+  "extends": "@nodecfdi/tsconfig/tsconfig.base.json"
 }
 ```

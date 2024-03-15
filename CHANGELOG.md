@@ -1,1 +1,9 @@
 # @nodecfdi/tooling-config Changelog
+
+## 1.0.0
+
+### Major - Initial version
+
+- first release version @nodecfdi/prettier-config
+- first release version @nodecfdi/tsconfig
+- first release version @nodecfdi/eslint-config
