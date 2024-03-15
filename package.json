@@ -8,7 +8,7 @@
     "lint",
     "formatter"
   ],
-  "private": false,
+  "private": true,
   "author": "Fernando Isidro <luffynando@gmail.com>",
   "license": "MIT",
   "type": "module",
