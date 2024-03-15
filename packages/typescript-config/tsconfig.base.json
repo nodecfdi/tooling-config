@@ -8,6 +8,7 @@
     "allowImportingTsExtensions": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "strict": true,
     "isolatedModules": true,
     "esModuleInterop": true,
     "strictNullChecks": true,
