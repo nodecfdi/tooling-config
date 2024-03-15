@@ -1,6 +1,6 @@
 import sonarjs from 'eslint-plugin-sonarjs';
-import { supportedFileTypes } from './constants.ts';
 import { type ExportableConfigAtom } from '../types/index.ts';
+import { supportedFileTypes } from './constants.ts';
 
 const sonarjsHandPickedRules = {
   'sonarjs/cognitive-complexity': 'off',

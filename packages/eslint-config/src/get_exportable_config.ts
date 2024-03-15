@@ -12,6 +12,8 @@ import { getUnicornConfig } from './configs/unicorn_config.ts';
 import { getSonarjsConfig } from './configs/sonarjs_config.ts';
 import { getArrowReturnStyleConfig } from './configs/arrow_return_style_config.ts';
 import { getImportConfig } from './configs/import_config.ts';
+import { getRegexpConfig } from './configs/regexp_config.ts';
+import { getCanonicalConfig } from './configs/canonical_config.ts';
 
 const prettierOverrides = {
   files: [supportedFileTypes],
@@ -29,8 +31,10 @@ export const getExportableConfig = (
 
   let exportableConfig: ExportableConfigAtom[] = [
     ...getTypescriptConfig(userConfigChoices),
+    getCanonicalConfig(),
     getTsdocConfig(),
     getEslintBaseConfig(),
+    getRegexpConfig(),
     getStylisticConfig(),
     getEarlyReturnConfig(),
     getUnicornConfig(),

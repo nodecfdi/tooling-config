@@ -1,6 +1,6 @@
 import arrowReturnStyle from 'eslint-plugin-arrow-return-style';
-import { supportedFileTypes } from './constants.ts';
 import { type ExportableConfigAtom } from '../types/index.ts';
+import { supportedFileTypes } from './constants.ts';
 
 export const getArrowReturnStyleConfig = (): ExportableConfigAtom => {
   return {

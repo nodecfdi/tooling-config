@@ -1,6 +1,6 @@
 import vitest from 'eslint-plugin-vitest';
-import { allJsExtensions } from './constants.ts';
 import { type ExportableConfigAtom } from '../types/index.ts';
+import { allJsExtensions } from './constants.ts';
 
 const vitestHandPickedRules = {
   ...vitest.configs.recommended.rules,
@@ -43,14 +43,14 @@ export const getVitestConfig = (pathsOverrides?: string[]): ExportableConfigAtom
       `**/tests/**/*.{${allJsExtensions}}`,
       `**/__tests__/**/*.{${allJsExtensions}}`,
     ],
-    plugins: {
-      vitest,
-    },
-    rules: vitestHandPickedRules,
     languageOptions: {
       globals: {
         ...vitest.environments.env.globals,
       },
     },
+    plugins: {
+      vitest,
+    },
+    rules: vitestHandPickedRules,
   };
 };
