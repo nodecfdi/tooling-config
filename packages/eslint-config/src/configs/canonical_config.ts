@@ -1,5 +1,5 @@
 import canonicalPlugin from 'eslint-plugin-canonical';
-import type { ExportableConfigAtom } from '../types/index.ts';
+import { type ExportableConfigAtom } from '../types/index.ts';
 import { supportedFileTypes } from './constants.ts';
 
 const canonicalHandPickedRules = {
@@ -32,6 +32,7 @@ const canonicalHandPickedRules = {
   'canonical/require-extension': ['error', { ignorePackages: true }],
   'canonical/sort-destructure-keys': 'error',
   'canonical/sort-keys': 'off',
+  'canonical/prefer-inline-type-import': 'error',
 };
 
 export const getCanonicalConfig = (): ExportableConfigAtom => {

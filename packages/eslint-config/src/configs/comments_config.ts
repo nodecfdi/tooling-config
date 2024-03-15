@@ -1,5 +1,5 @@
 import commentsPlugin from '@eslint-community/eslint-plugin-eslint-comments';
-import type { ExportableConfigAtom } from '../types/index.ts';
+import { type ExportableConfigAtom } from '../types/index.ts';
 import { supportedFileTypes } from './constants.ts';
 
 const commentsHandPickedRules = {

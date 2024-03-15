@@ -1,4 +1,4 @@
-export interface NodecfdiSettings {
+export type NodecfdiSettings = {
   /**
    * Vitest support.
    */
@@ -33,7 +33,7 @@ export interface NodecfdiSettings {
    * This setting accepts an array of filepaths, dictaced by minimatch syntax. Only the matching files found in this array will be linted. All other files will be ignored. This is useful if you want to lint only a subset of your project.
    */
   files?: string[];
-}
+};
 
 export type Plugins =
   | Record<
@@ -48,7 +48,7 @@ export type Plugins =
   | null
   | undefined;
 
-export interface ExportableConfigAtom {
+export type ExportableConfigAtom = {
   rules?: Record<string, unknown>;
   plugins?: Plugins;
   files?: string[];
@@ -59,4 +59,4 @@ export interface ExportableConfigAtom {
     noInlineConfig?: boolean;
     reportUnusedDisableDirectives?: 'error' | 'warn' | 'off';
   };
-}
+};

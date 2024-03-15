@@ -85,7 +85,7 @@ const typescriptHandPickedRules = {
     },
   ],
   '@typescript-eslint/consistent-type-assertions': 'error',
-  '@typescript-eslint/consistent-type-definitions': 'error',
+  '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
   '@typescript-eslint/consistent-type-exports': [
     'error',
     { fixMixedExportsWithInlineTypeSpecifier: true },
@@ -93,6 +93,7 @@ const typescriptHandPickedRules = {
   '@typescript-eslint/consistent-type-imports': [
     'error',
     {
+      prefer: 'type-imports',
       fixStyle: 'inline-type-imports',
     },
   ],
@@ -159,7 +160,7 @@ export const getTypescriptConfig = (
       rules: eslintRecommended.configs.recommended.rules,
     },
     {
-      files: [`**/*.{${allJsExtensions}}`],
+      files: [`**/*.{${allJsExtensions},.d.ts}`],
       languageOptions: getLanguageOptionsTypescript(customTSConfigPath),
       plugins: {
         '@typescript-eslint': tseslint.plugin,
@@ -171,6 +172,14 @@ export const getTypescriptConfig = (
         ...tseslintRules,
         ...typescriptHandPickedRules,
         ...tsNamingConventionRule,
+      },
+    },
+    {
+      files: ['**/*.d.ts'],
+      rules: {
+        '@typescript-eslint/consistent-type-definitions': 'off',
+        '@typescript-eslint/no-empty-interface': 'off',
+        '@typescript-eslint/no-shadow': 'off',
       },
     },
   ];

@@ -1,5 +1,5 @@
 import promisePlugin from 'eslint-plugin-promise';
-import type { ExportableConfigAtom } from '../types/index.ts';
+import { type ExportableConfigAtom } from '../types/index.ts';
 import { supportedFileTypes } from './constants.ts';
 
 const promiseHandPickedRules = {

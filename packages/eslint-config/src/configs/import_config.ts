@@ -15,6 +15,7 @@ const importHandPickedRules = {
   'import/no-duplicates': ['error', { 'prefer-inline': true }],
   'import/newline-after-import': ['error', { considerComments: true }],
   'import/no-useless-path-segments': 'error',
+  'import/no-dynamic-require': 'off',
 };
 
 export const getImportConfig = (): ExportableConfigAtom[] => {
