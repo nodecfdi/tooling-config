@@ -7,6 +7,7 @@ import { ignores, supportedFileTypes } from './configs/constants.ts';
 import { getEarlyReturnConfig } from './configs/early_return_config.ts';
 import { getEslintBaseConfig } from './configs/eslint_base_config.ts';
 import { getImportConfig } from './configs/import_config.ts';
+import { getPromiseConfig } from './configs/promise_config.ts';
 import { getRegexpConfig } from './configs/regexp_config.ts';
 import { getSimpleImportSortConfig } from './configs/simple_import_sort_config.ts';
 import { getSonarjsConfig } from './configs/sonarjs_config.ts';
@@ -45,6 +46,7 @@ export const getExportableConfig = (
     getArrowReturnStyleConfig(),
     ...getImportConfig(),
     getCommentsConfig(),
+    getPromiseConfig(),
   ];
 
   if (userConfigChoices.vitest) {
