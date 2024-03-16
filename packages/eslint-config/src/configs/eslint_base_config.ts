@@ -84,7 +84,7 @@ const eslintBaseHandPickedRules = {
   'no-unused-expressions': 'off',
   'no-use-before-define': 'off',
   'no-useless-call': 'error',
-  'no-void': 'error',
+  'no-void': ['error', { allowAsStatement: true }],
   'object-shorthand': 'error',
   'operator-assignment': ['error', 'never'],
   'prefer-arrow-callback': 'error',

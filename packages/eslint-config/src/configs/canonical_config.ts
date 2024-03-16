@@ -5,14 +5,8 @@ import { supportedFileTypes } from './constants.ts';
 const canonicalHandPickedRules = {
   'canonical/destructuring-property-newline': 'off',
   'canonical/export-specifier-newline': 'off',
-  'canonical/filename-match-exported': 'error',
-  'canonical/filename-match-regex': [
-    'warn',
-    {
-      ignoreExporting: false,
-      regex: '^(?:.?[A-Z]?[a-z]+(?:[A-Z][a-z]+)*)*$',
-    },
-  ],
+  'canonical/filename-match-exported': 'off',
+  'canonical/filename-match-regex': 'off',
   'canonical/filename-no-index': 'off',
   'canonical/id-match': [
     'error',

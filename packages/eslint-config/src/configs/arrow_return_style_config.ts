@@ -7,10 +7,7 @@ export const getArrowReturnStyleConfig = (): ExportableConfigAtom => {
     files: [supportedFileTypes],
     plugins: { 'arrow-return-style': arrowReturnStyle },
     rules: {
-      'arrow-return-style/arrow-return-style': [
-        'error',
-        { namedExportsAlwaysUseExplicitReturn: false },
-      ],
+      'arrow-return-style/arrow-return-style': 'off',
       'arrow-return-style/no-export-default-arrow': 'error',
     },
   };
