@@ -1,6 +1,6 @@
 {
   "name": "@nodecfdi/tsconfig",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Base typescript configuration files for NodeCfdi projects",
   "keywords": [
     "tsconfig",
@@ -16,7 +16,8 @@
     "./tsconfig.client.json": "./tsconfig.client.json"
   },
   "files": [
-    "tsconfig.base.json"
+    "tsconfig.base.json",
+    "tsconfig.client.json"
   ],
   "scripts": {},
   "repository": "https://github.com/nodecfdi/tooling-config",
