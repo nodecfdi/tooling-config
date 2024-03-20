@@ -12,7 +12,8 @@
   "license": "MIT",
   "type": "module",
   "exports": {
-    "./tsconfig.base.json": "./tsconfig.base.json"
+    "./tsconfig.base.json": "./tsconfig.base.json",
+    "./tsconfig.client.json": "./tsconfig.client.json"
   },
   "files": [
     "tsconfig.base.json"
