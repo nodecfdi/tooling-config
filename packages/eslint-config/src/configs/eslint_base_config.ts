@@ -1,6 +1,6 @@
 /* eslint-disable sonarjs/no-duplicate-string */
-import { type ExportableConfigAtom } from '../types/index.ts';
-import { supportedFileTypes } from './constants.ts';
+import { type ExportableConfigAtom } from '../types/flat_config.js';
+import { supportedFileTypes } from './constants.js';
 
 const eslintBaseHandPickedRules = {
   'array-callback-return': ['error', { allowImplicit: true, checkForEach: true }],
@@ -86,7 +86,7 @@ const eslintBaseHandPickedRules = {
   'no-useless-call': 'error',
   'no-void': ['error', { allowAsStatement: true }],
   'object-shorthand': 'error',
-  'operator-assignment': ['error', 'never'],
+  'operator-assignment': ['error', 'always'],
   'prefer-arrow-callback': 'error',
   'prefer-destructuring': [
     'error',

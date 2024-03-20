@@ -1,6 +1,6 @@
 import tsdocPlugin from 'eslint-plugin-tsdoc';
-import { type ExportableConfigAtom } from '../types/index.ts';
-import { supportedFileTypes } from './constants.ts';
+import { type ExportableConfigAtom } from '../types/flat_config.js';
+import { supportedFileTypes } from './constants.js';
 
 export const getTsdocConfig = (): ExportableConfigAtom => {
   return {

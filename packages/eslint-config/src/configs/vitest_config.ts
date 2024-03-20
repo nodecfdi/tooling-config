@@ -1,6 +1,6 @@
 import vitest from 'eslint-plugin-vitest';
-import { type ExportableConfigAtom } from '../types/index.ts';
-import { allJsExtensions } from './constants.ts';
+import { type ExportableConfigAtom } from '../types/flat_config.js';
+import { allJsExtensions } from './constants.js';
 
 const vitestHandPickedRules = {
   ...vitest.configs.recommended.rules,

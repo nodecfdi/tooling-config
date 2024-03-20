@@ -1,6 +1,6 @@
 import stylistic from '@stylistic/eslint-plugin';
-import { type ExportableConfigAtom } from '../types/index.ts';
-import { supportedFileTypes } from './constants.ts';
+import { type ExportableConfigAtom } from '../types/flat_config.js';
+import { supportedFileTypes } from './constants.js';
 
 const stylisticHandPickedRules = {
   // Prettier doesn't have strong opinions about emptyLines. See: https://prettier.io/docs/en/rationale.html#empty-lines.

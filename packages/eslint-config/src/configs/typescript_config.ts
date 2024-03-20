@@ -1,26 +1,11 @@
 import eslintRecommended from '@eslint/js';
-import tseslint from 'typescript-eslint';
-import { type ExportableConfigAtom, type NodecfdiSettings } from '../types/index.ts';
-import { allJsExtensions, supportedFileTypes } from './constants.ts';
-
-const getLanguageOptionsTypescript = (userChosenTsConfig?: string | string[]) => {
-  return {
-    parser: tseslint.parser,
-    parserOptions: {
-      project: userChosenTsConfig || true,
-    },
-  };
-};
+import { configs, plugin } from 'typescript-eslint';
+import { type ExportableConfigAtom } from '../types/flat_config.js';
+import { allJsExtensions, supportedFileTypes } from './constants.js';
 
 const tsNamingConventionRule = {
   '@typescript-eslint/naming-convention': [
     'error',
-    {
-      format: ['camelCase'],
-      leadingUnderscore: 'forbid',
-      selector: 'default',
-      trailingUnderscore: 'forbid',
-    },
     {
       format: ['camelCase', 'UPPER_CASE'],
       leadingUnderscore: 'forbid',
@@ -69,6 +54,10 @@ const tsNamingConventionRule = {
       },
       format: ['PascalCase'],
       selector: 'interface',
+    },
+    {
+      selector: 'variable',
+      format: ['camelCase', 'UPPER_CASE', 'PascalCase'],
     },
   ],
 };
@@ -136,14 +125,8 @@ const typescriptHandPickedRules = {
   '@typescript-eslint/unified-signatures': 'error',
 };
 
-export const getTypescriptConfig = (
-  userConfigChoices: NodecfdiSettings,
-): ExportableConfigAtom[] => {
-  const customTSConfigPath = userConfigChoices.pathsOveriddes?.tsconfigLocation;
-  const tseslintConfigs = [
-    ...tseslint.configs.strictTypeChecked,
-    ...tseslint.configs.stylisticTypeChecked,
-  ];
+export const getTypescriptConfig = (): ExportableConfigAtom[] => {
+  const tseslintConfigs = [...configs.strictTypeChecked, ...configs.stylisticTypeChecked];
   const rules = tseslintConfigs.map((config) => config.rules ?? {});
   let tseslintRules = {};
 
@@ -161,9 +144,8 @@ export const getTypescriptConfig = (
     },
     {
       files: [`**/*.{${allJsExtensions},.d.ts}`],
-      languageOptions: getLanguageOptionsTypescript(customTSConfigPath),
       plugins: {
-        '@typescript-eslint': tseslint.plugin,
+        '@typescript-eslint': plugin,
       },
     },
     {

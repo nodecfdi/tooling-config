@@ -17,13 +17,13 @@ npm i -D eslint @nodecfdi/eslint-config
 ### Yarn
 
 ```shell
-yarn add eslint -D @nodecfdi/eslint-config
+yarn add -D eslint @nodecfdi/eslint-config
 ```
 
 ### PNPM
 
 ```shell
-pnpm add eslint -D @nodecfdi/eslint-config
+pnpm add -D eslint @nodecfdi/eslint-config
 ```
 
 ## Uso básico
@@ -63,7 +63,7 @@ export type NodecfdiSettings = {
    */
   pathsOveriddes?: {
     /**
-     * With this setting, if you have multiple tsconfig.json files in your project (like tsconfig.json, tsconfig.eslint.json, tsconfig.node.json, etc...) you can specify which config Sheriff will pickup. You can also specify a list of paths, see: https://typescript-eslint.io/linting/typed-linting/monorepos/#one-tsconfigjson-per-package-and-an-optional-one-in-the-root.
+     * With this setting, if you have multiple tsconfig.json files in your project (like tsconfig.json, tsconfig.eslint.json, tsconfig.node.json, etc...) you can specify which config NodeCfdi will pickup. You can also specify a list of paths, see: https://typescript-eslint.io/linting/typed-linting/monorepos/#one-tsconfigjson-per-package-and-an-optional-one-in-the-root.
      */
     tsconfigLocation?: string | string[];
     /**

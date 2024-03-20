@@ -1,6 +1,6 @@
 import promisePlugin from 'eslint-plugin-promise';
-import { type ExportableConfigAtom } from '../types/index.ts';
-import { supportedFileTypes } from './constants.ts';
+import { type ExportableConfigAtom } from '../types/flat_config.js';
+import { supportedFileTypes } from './constants.js';
 
 const promiseHandPickedRules = {
   'promise/param-names': 'error',

@@ -1,4 +1,4 @@
-export type NodecfdiSettings = {
+type NodecfdiSettings = {
   /**
    * Vitest support.
    */
@@ -8,7 +8,7 @@ export type NodecfdiSettings = {
    */
   pathsOveriddes?: {
     /**
-     * With this setting, if you have multiple tsconfig.json files in your project (like tsconfig.json, tsconfig.eslint.json, tsconfig.node.json, etc...) you can specify which config Sheriff will pickup. You can also specify a list of paths, see: https://typescript-eslint.io/linting/typed-linting/monorepos/#one-tsconfigjson-per-package-and-an-optional-one-in-the-root.
+     * With this setting, if you have multiple tsconfig.json files in your project (like tsconfig.json, tsconfig.eslint.json, tsconfig.node.json, etc...) you can specify which config NodeCfdi will pickup. You can also specify a list of paths, see: https://typescript-eslint.io/linting/typed-linting/monorepos/#one-tsconfigjson-per-package-and-an-optional-one-in-the-root.
      */
     tsconfigLocation?: string | string[];
     /**
@@ -35,28 +35,4 @@ export type NodecfdiSettings = {
   };
 };
 
-export type Plugins =
-  | Record<
-      string,
-      | {
-          files?: string[];
-          rules?: unknown;
-          configs?: unknown;
-        }
-      | undefined
-    >
-  | null
-  | undefined;
-
-export type ExportableConfigAtom = {
-  rules?: Record<string, unknown>;
-  plugins?: Plugins;
-  files?: string[];
-  languageOptions?: Record<string, unknown>;
-  settings?: Record<string, unknown>;
-  ignores?: string[];
-  linterOptions?: {
-    noInlineConfig?: boolean;
-    reportUnusedDisableDirectives?: 'error' | 'warn' | 'off';
-  };
-};
+export default NodecfdiSettings;
