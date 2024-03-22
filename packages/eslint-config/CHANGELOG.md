@@ -1,5 +1,13 @@
 # @nodecfdi/eslint-config
 
+## 1.3.0
+
+### Minor Changes - Update rules third review
+
+- update rules
+- add security plugin
+- update dependencies
+
 ## 1.2.0
 
 ### Minor Changes - Update rules second review
