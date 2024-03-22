@@ -8,17 +8,7 @@ const canonicalHandPickedRules = {
   'canonical/filename-match-exported': 'off',
   'canonical/filename-match-regex': 'off',
   'canonical/filename-no-index': 'off',
-  'canonical/id-match': [
-    'error',
-    '(^[A-Za-z]+(?:[A-Z][a-z]*)*\\d*$)|(^[A-Z]+(_[A-Z]+)*(_\\d$)*$)|(^(_|\\$)$)|(^_[A-Za-z]+$)',
-    {
-      classFields: true,
-      ignoreDestructuring: true,
-      ignoreNamedImports: true,
-      onlyDeclarations: true,
-      properties: true,
-    },
-  ],
+  'canonical/id-match': 'off',
   'canonical/import-specifier-newline': 'off',
   'canonical/no-import-namespace-destructure': 'error',
   'canonical/no-restricted-strings': 'off',

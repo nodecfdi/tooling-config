@@ -10,6 +10,7 @@ import { getImportConfig } from './configs/import_config.js';
 import { getPrettierConfig } from './configs/prettier_config.js';
 import { getPromiseConfig } from './configs/promise_config.js';
 import { getRegexpConfig } from './configs/regexp_config.js';
+import { getSecurityConfig } from './configs/security_config.js';
 import { getSimpleImportSortConfig } from './configs/simple_import_sort_config.js';
 import { getSonarjsConfig } from './configs/sonarjs_config.js';
 import { getStylisticConfig } from './configs/stylistic_config.js';
@@ -58,6 +59,7 @@ export const getExportableConfig = (
     ...getImportConfig(),
     getCommentsConfig(),
     getPromiseConfig(),
+    getSecurityConfig(),
   ];
 
   if (userConfigChoices.vitest) {

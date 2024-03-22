@@ -82,6 +82,7 @@ const eslintBaseHandPickedRules = {
   'no-unreachable-loop': 'error',
   // we are using the @typescript/eslint version
   'no-unused-expressions': 'off',
+  'no-unused-vars': 'off',
   'no-use-before-define': 'off',
   'no-useless-call': 'error',
   'no-void': ['error', { allowAsStatement: true }],

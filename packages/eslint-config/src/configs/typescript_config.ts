@@ -8,30 +8,30 @@ const tsNamingConventionRule = {
     'error',
     {
       format: ['camelCase', 'UPPER_CASE'],
-      leadingUnderscore: 'forbid',
+      leadingUnderscore: 'allowSingleOrDouble',
       modifiers: ['const'],
       selector: 'variable',
-      trailingUnderscore: 'forbid',
+      trailingUnderscore: 'allowSingleOrDouble',
       types: ['string', 'number'],
     },
     {
       format: null,
       leadingUnderscore: 'allowSingleOrDouble',
       selector: 'objectLiteralProperty',
-      trailingUnderscore: 'forbid',
+      trailingUnderscore: 'allowSingleOrDouble',
     },
     {
       format: ['PascalCase'],
-      leadingUnderscore: 'forbid',
+      leadingUnderscore: 'allowSingleOrDouble',
       selector: 'typeLike',
-      trailingUnderscore: 'forbid',
+      trailingUnderscore: 'allowSingleOrDouble',
     },
     {
       format: ['PascalCase'],
-      leadingUnderscore: 'forbid',
+      leadingUnderscore: 'allowSingleOrDouble',
       prefix: ['is', 'has', 'should', 'can'],
       selector: 'variable',
-      trailingUnderscore: 'forbid',
+      trailingUnderscore: 'allowSingleOrDouble',
       types: ['boolean'],
     },
     {
@@ -123,6 +123,19 @@ const typescriptHandPickedRules = {
   '@typescript-eslint/return-await': 'error',
   '@typescript-eslint/switch-exhaustiveness-check': 'error',
   '@typescript-eslint/unified-signatures': 'error',
+  '@typescript-eslint/no-unused-vars': [
+    'error',
+    {
+      args: 'all',
+      argsIgnorePattern: '^_',
+      caughtErrors: 'all',
+      caughtErrorsIgnorePattern: '^_',
+      destructuredArrayIgnorePattern: '^_',
+      varsIgnorePattern: '^_',
+      ignoreRestSiblings: true,
+    },
+  ],
+  '@typescript-eslint/restrict-template-expressions': 'off',
 };
 
 export const getTypescriptConfig = (): ExportableConfigAtom[] => {

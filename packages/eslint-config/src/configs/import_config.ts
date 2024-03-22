@@ -51,7 +51,7 @@ const importHandPickedRules = {
   'import/no-relative-parent-imports': 'off',
   'import/no-restricted-paths': 'off',
   'import/no-self-import': 'error',
-  'import/no-unassigned-import': 'error',
+  'import/no-unassigned-import': ['error', { allow: ['**/*.{css,sass,scss}', 'reflect-metadata'] }],
   'import/no-unresolved': 'off',
   'import/no-unused-modules': 'off',
   'import/no-useless-path-segments': [

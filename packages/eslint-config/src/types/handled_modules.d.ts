@@ -5,6 +5,7 @@ declare module 'eslint-plugin-promise';
 declare module 'eslint-plugin-unicorn';
 declare module 'eslint-plugin-import';
 declare module 'eslint-plugin-simple-import-sort';
+declare module 'eslint-plugin-security';
 declare module 'eslint-plugin-regexp' {
   import { type TSESLint } from '@typescript-eslint/utils';
 
