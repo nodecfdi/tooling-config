@@ -30,6 +30,6 @@ declare module 'eslint-plugin-vue' {
   import { type TSESLint } from '@typescript-eslint/utils';
 
   declare const configs: {
-    'flat/recommended': TSESLint.FlatConfig.Config;
+    'flat/recommended': TSESLint.FlatConfig.Config[];
   };
 }

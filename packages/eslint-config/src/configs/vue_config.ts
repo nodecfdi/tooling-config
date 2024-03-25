@@ -35,7 +35,7 @@ const vueHandPickedRules: Rules = {
 
 export const getVueConfig = (): ExportableConfigAtom[] => {
   return [
-    pluginVue.configs['flat/recommended'] as ExportableConfigAtom,
+    ...(pluginVue.configs['flat/recommended'] as ExportableConfigAtom[]),
     {
       files: ['**/*.vue'],
       rules: vueHandPickedRules,
