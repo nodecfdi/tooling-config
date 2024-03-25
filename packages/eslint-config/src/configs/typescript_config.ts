@@ -1,9 +1,9 @@
 import eslintRecommended from '@eslint/js';
 import { configs, plugin } from 'typescript-eslint';
-import { type ExportableConfigAtom } from '../types/flat_config.js';
+import { type ExportableConfigAtom, type Rules } from '../types/flat_config.js';
 import { allJsExtensions, supportedFileTypes } from './constants.js';
 
-const tsNamingConventionRule = {
+const tsNamingConventionRule: Rules = {
   '@typescript-eslint/naming-convention': [
     'error',
     {
@@ -62,7 +62,7 @@ const tsNamingConventionRule = {
   ],
 };
 
-const typescriptHandPickedRules = {
+const typescriptHandPickedRules: Rules = {
   '@typescript-eslint/array-type': 'error',
   '@typescript-eslint/ban-ts-comment': [
     'error',
@@ -141,7 +141,7 @@ const typescriptHandPickedRules = {
 export const getTypescriptConfig = (): ExportableConfigAtom[] => {
   const tseslintConfigs = [...configs.strictTypeChecked, ...configs.stylisticTypeChecked];
   const rules = tseslintConfigs.map((config) => config.rules ?? {});
-  let tseslintRules = {};
+  let tseslintRules: Rules = {};
 
   for (const rule of rules) {
     tseslintRules = {

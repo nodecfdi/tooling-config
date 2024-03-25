@@ -1,9 +1,9 @@
-import vitest from 'eslint-plugin-vitest';
-import { type ExportableConfigAtom } from '../types/flat_config.js';
+import vitestPlugin from 'eslint-plugin-vitest';
+import { type ExportableConfigAtom, type Rules } from '../types/flat_config.js';
 import { allJsExtensions } from './constants.js';
 
-const vitestHandPickedRules = {
-  ...vitest.configs.recommended.rules,
+const vitestHandPickedRules: Rules = {
+  ...vitestPlugin.configs.recommended.rules,
   'vitest/consistent-test-it': ['error', { fn: 'test', withinDescribe: 'test' }],
   'vitest/no-conditional-expect': 'error',
   'vitest/no-conditional-tests': 'error',
@@ -45,11 +45,11 @@ export const getVitestConfig = (pathsOverrides?: string[]): ExportableConfigAtom
     ],
     languageOptions: {
       globals: {
-        ...vitest.environments.env.globals,
+        ...vitestPlugin.environments.env.globals,
       },
     },
     plugins: {
-      vitest,
+      vitest: vitestPlugin,
     },
     rules: vitestHandPickedRules,
   };

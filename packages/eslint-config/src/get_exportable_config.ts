@@ -1,5 +1,7 @@
 import getGitignorePatterns from 'eslint-config-flat-gitignore';
-import { parser } from 'typescript-eslint';
+import { parser as tsParser } from 'typescript-eslint';
+import vueParser from 'vue-eslint-parser';
+import { getAdonisJsConfig } from './configs/adonisjs_config.js';
 import { getArrowReturnStyleConfig } from './configs/arrow_return_style_config.js';
 import { getCanonicalConfig } from './configs/canonical_config.js';
 import { getCommentsConfig } from './configs/comments_config.js';
@@ -18,16 +20,22 @@ import { getTsdocConfig } from './configs/tsdoc_config.js';
 import { getTypescriptConfig } from './configs/typescript_config.js';
 import { getUnicornConfig } from './configs/unicorn_config.js';
 import { getVitestConfig } from './configs/vitest_config.js';
+import { getVueConfig } from './configs/vue_config.js';
 import { type ExportableConfigAtom } from './types/flat_config.js';
 import type NodecfdiSettings from './types/node_settings.js';
 
-const getLanguageOptionsTypescript = (userChosenTsConfig?: string | string[]) => {
+const getLanguageOptionsTypescript = (
+  userChosenTsConfig?: string | string[],
+  vueSupport = false,
+) => {
   return {
-    parser,
+    parser: vueSupport ? vueParser : tsParser,
     parserOptions: {
+      parser: vueSupport ? tsParser : undefined,
       ecmaVersion: 'latest',
       sourceType: 'module',
       project: userChosenTsConfig || true,
+      extraFileExtensions: vueSupport ? ['.vue'] : undefined,
     },
   };
 };
@@ -37,12 +45,15 @@ export const getExportableConfig = (
 ): ExportableConfigAtom[] => {
   const userConfigChoices = userConfigPrefers ?? {
     vitest: true,
+    adonisjs: false,
+    vue: false,
   };
 
   const exportableConfig: ExportableConfigAtom[] = [
     {
       languageOptions: getLanguageOptionsTypescript(
         userConfigChoices.pathsOveriddes?.tsconfigLocation,
+        userConfigChoices.vue,
       ),
     },
     ...getTypescriptConfig(),
@@ -64,6 +75,14 @@ export const getExportableConfig = (
 
   if (userConfigChoices.vitest) {
     exportableConfig.push(getVitestConfig(userConfigChoices.pathsOveriddes?.tests));
+  }
+
+  if (userConfigChoices.adonisjs) {
+    exportableConfig.push(...getAdonisJsConfig());
+  }
+
+  if (userConfigChoices.vue) {
+    exportableConfig.push(...getVueConfig());
   }
 
   exportableConfig.push(...getPrettierConfig());

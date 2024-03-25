@@ -4,6 +4,14 @@ type NodecfdiSettings = {
    */
   vitest?: boolean;
   /**
+   * AdonisJS support.
+   */
+  adonisjs?: boolean;
+  /**
+   * Vue3 Support.
+   */
+  vue?: boolean;
+  /**
    * This parameter allows you to override the paths for some Nodecfdi settings.
    */
   pathsOveriddes?: {

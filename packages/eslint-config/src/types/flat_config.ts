@@ -1,25 +1,13 @@
-export type Plugins =
-  | Record<
-      string,
-      | {
-          files?: string[];
-          rules?: unknown;
-          configs?: unknown;
-        }
-      | undefined
-    >
-  | null
-  | undefined;
+import { type TSESLint } from '@typescript-eslint/utils';
 
-export type ExportableConfigAtom = {
-  rules?: Record<string, unknown>;
+export type Rules = TSESLint.FlatConfig.Rules;
+
+export type Plugins = Record<string, unknown> | null | undefined;
+
+export type ExportableConfigAtom = Omit<
+  TSESLint.FlatConfig.Config,
+  'plugins' | 'languageOptions'
+> & {
   plugins?: Plugins;
-  files?: string[];
   languageOptions?: Record<string, unknown>;
-  settings?: Record<string, unknown>;
-  ignores?: string[];
-  linterOptions?: {
-    noInlineConfig?: boolean;
-    reportUnusedDisableDirectives?: 'error' | 'warn' | 'off';
-  };
 };

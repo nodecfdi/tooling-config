@@ -1,8 +1,8 @@
 import canonicalPlugin from 'eslint-plugin-canonical';
-import { type ExportableConfigAtom } from '../types/flat_config.js';
+import { type ExportableConfigAtom, type Rules } from '../types/flat_config.js';
 import { supportedFileTypes } from './constants.js';
 
-const canonicalHandPickedRules = {
+const canonicalHandPickedRules: Rules = {
   'canonical/destructuring-property-newline': 'off',
   'canonical/export-specifier-newline': 'off',
   'canonical/filename-match-exported': 'off',

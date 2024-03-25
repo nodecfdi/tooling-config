@@ -1,8 +1,8 @@
 /* eslint-disable sonarjs/no-duplicate-string */
-import { type ExportableConfigAtom } from '../types/flat_config.js';
+import { type ExportableConfigAtom, type Rules } from '../types/flat_config.js';
 import { supportedFileTypes } from './constants.js';
 
-const eslintBaseHandPickedRules = {
+const eslintBaseHandPickedRules: Rules = {
   'array-callback-return': ['error', { allowImplicit: true, checkForEach: true }],
   // we are using the @typescript/eslint version
   'arrow-body-style': 'off',

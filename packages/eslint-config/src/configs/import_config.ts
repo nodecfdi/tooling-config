@@ -1,8 +1,8 @@
 import pluginImport from 'eslint-plugin-import';
-import { type ExportableConfigAtom } from '../types/flat_config.js';
+import { type ExportableConfigAtom, type Rules } from '../types/flat_config.js';
 import { allJsExtensions, supportedFileTypes, typescriptExtensions } from './constants.js';
 
-const importHandPickedRules = {
+const importHandPickedRules: Rules = {
   'import/consistent-type-specifier-style': ['error', 'prefer-inline'],
   'import/default': 'error',
   'import/dynamic-import-chunkname': 'off',
@@ -74,11 +74,12 @@ export const getImportConfig = (): ExportableConfigAtom[] => {
       plugins: { import: pluginImport },
       rules: importHandPickedRules,
       settings: {
-        'import/extensions': typescriptExtensions,
+        'import/extensions': [...typescriptExtensions, '.vue'],
         'import/external-module-folders': ['node_modules', 'node_modules/@types'],
         'import/parsers': {
           'espree': ['.js', '.cjs', '.mjs', '.jxs'],
           '@typescript-eslint/parser': ['.ts', '.tsx'],
+          'vue-eslint-parser': ['.vue'],
         },
         'import/resolver': {
           node: true,

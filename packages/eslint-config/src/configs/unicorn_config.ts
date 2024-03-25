@@ -1,8 +1,8 @@
 import unicorn from 'eslint-plugin-unicorn';
-import { type ExportableConfigAtom } from '../types/flat_config.js';
+import { type ExportableConfigAtom, type Rules } from '../types/flat_config.js';
 import { supportedFileTypes } from './constants.js';
 
-const unicornHandPickedRules = {
+const unicornHandPickedRules: Rules = {
   'unicorn/better-regex': 'error',
   'unicorn/catch-error-name': 'error',
   'unicorn/consistent-destructuring': 'error',

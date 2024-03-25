@@ -1,8 +1,8 @@
 import securityPlugin from 'eslint-plugin-security';
-import { type ExportableConfigAtom } from '../types/flat_config.js';
+import { type ExportableConfigAtom, type Rules } from '../types/flat_config.js';
 import { supportedFileTypes } from './constants.js';
 
-const securityHandPickedRules = {
+const securityHandPickedRules: Rules = {
   'security/detect-buffer-noassert': 'error',
   'security/detect-child-process': 'error',
   'security/detect-disable-mustache-escape': 'error',

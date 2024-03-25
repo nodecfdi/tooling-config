@@ -1,8 +1,8 @@
 import stylistic from '@stylistic/eslint-plugin';
-import { type ExportableConfigAtom } from '../types/flat_config.js';
+import { type ExportableConfigAtom, type Rules } from '../types/flat_config.js';
 import { supportedFileTypes } from './constants.js';
 
-const stylisticHandPickedRules = {
+const stylisticHandPickedRules: Rules = {
   // Prettier doesn't have strong opinions about emptyLines. See: https://prettier.io/docs/en/rationale.html#empty-lines.
   '@stylistic/padding-line-between-statements': [
     'error',
@@ -17,6 +17,8 @@ const stylisticHandPickedRules = {
     //require blank lines before all return statements, like the newline-before-return rule.
     { blankLine: 'always', next: 'return', prev: '*' },
   ],
+  '@stylistic/semi': ['error', 'always'],
+  '@stylistic/no-extra-semi': 'error',
 };
 
 export const getStylisticConfig = (): ExportableConfigAtom => {

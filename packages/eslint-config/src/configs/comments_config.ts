@@ -1,8 +1,8 @@
 import commentsPlugin from '@eslint-community/eslint-plugin-eslint-comments';
-import { type ExportableConfigAtom } from '../types/flat_config.js';
+import { type ExportableConfigAtom, type Rules } from '../types/flat_config.js';
 import { supportedFileTypes } from './constants.js';
 
-const commentsHandPickedRules = {
+const commentsHandPickedRules: Rules = {
   '@eslint-community/eslint-comments/disable-enable-pair': [
     'error',
     {

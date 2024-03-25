@@ -1,8 +1,8 @@
 import promisePlugin from 'eslint-plugin-promise';
-import { type ExportableConfigAtom } from '../types/flat_config.js';
+import { type ExportableConfigAtom, type Rules } from '../types/flat_config.js';
 import { supportedFileTypes } from './constants.js';
 
-const promiseHandPickedRules = {
+const promiseHandPickedRules: Rules = {
   'promise/param-names': 'error',
   'promise/prefer-await-to-callbacks': 'off',
   'promise/prefer-await-to-then': 'error',

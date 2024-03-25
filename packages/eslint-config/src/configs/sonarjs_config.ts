@@ -1,8 +1,8 @@
 import sonarjs from 'eslint-plugin-sonarjs';
-import { type ExportableConfigAtom } from '../types/flat_config.js';
+import { type ExportableConfigAtom, type Rules } from '../types/flat_config.js';
 import { supportedFileTypes } from './constants.js';
 
-const sonarjsHandPickedRules = {
+const sonarjsHandPickedRules: Rules = {
   'sonarjs/cognitive-complexity': 'off',
   'sonarjs/prefer-immediate-return': 'off',
 };
