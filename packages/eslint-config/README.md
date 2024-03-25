@@ -53,11 +53,19 @@ export default defineFlatConfig([
 ## Ajustes y personalizaciones
 
 ```ts
-export type NodecfdiSettings = {
+type NodecfdiSettings = {
   /**
    * Vitest support.
    */
   vitest?: boolean;
+  /**
+   * AdonisJS support.
+   */
+  adonisjs?: boolean;
+  /**
+   * Vue3 Support.
+   */
+  vue?: boolean;
   /**
    * This parameter allows you to override the paths for some Nodecfdi settings.
    */

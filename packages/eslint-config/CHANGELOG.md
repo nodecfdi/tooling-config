@@ -1,5 +1,15 @@
 # @nodecfdi/eslint-config
 
+## 1.4.0
+
+### Minor Changes - Support to vue and adonisjs projects
+
+- update stylistic rules
+- update types
+- add support to vue config
+- add support to adonisjs config
+- update dependencies
+
 ## 1.3.0
 
 ### Minor Changes - Update rules third review
