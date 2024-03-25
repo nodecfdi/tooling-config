@@ -1,5 +1,12 @@
 # @nodecfdi/eslint-config
 
+## 1.4.1
+
+### Patch Changes - Fix correct usage of config vue3
+
+- fix correct flat config of vue3
+- fix correct module type vue3
+
 ## 1.4.0
 
 ### Minor Changes - Support to vue and adonisjs projects
