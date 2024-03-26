@@ -1,6 +1,6 @@
 import pluginImport from 'eslint-plugin-import';
 import { type ExportableConfigAtom, type Rules } from '../types/flat_config.js';
-import { allJsExtensions, supportedFileTypes, typescriptExtensions } from './constants.js';
+import { allFilesSupported, allJsExtensions, typescriptExtensions } from './constants.js';
 
 const importHandPickedRules: Rules = {
   'import/consistent-type-specifier-style': ['error', 'prefer-inline'],
@@ -70,7 +70,7 @@ const importHandPickedRules: Rules = {
 export const getImportConfig = (): ExportableConfigAtom[] => {
   return [
     {
-      files: [supportedFileTypes],
+      files: [allFilesSupported],
       plugins: { import: pluginImport },
       rules: importHandPickedRules,
       settings: {
@@ -97,7 +97,7 @@ export const getImportConfig = (): ExportableConfigAtom[] => {
       },
     },
     {
-      files: [supportedFileTypes],
+      files: [allFilesSupported],
       linterOptions: {
         reportUnusedDisableDirectives: 'error',
       },

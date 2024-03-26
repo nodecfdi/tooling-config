@@ -1,6 +1,6 @@
 import securityPlugin from 'eslint-plugin-security';
 import { type ExportableConfigAtom, type Rules } from '../types/flat_config.js';
-import { supportedFileTypes } from './constants.js';
+import { allFilesSupported } from './constants.js';
 
 const securityHandPickedRules: Rules = {
   'security/detect-buffer-noassert': 'error',
@@ -19,7 +19,7 @@ const securityHandPickedRules: Rules = {
 
 export const getSecurityConfig = (): ExportableConfigAtom => {
   return {
-    files: [supportedFileTypes],
+    files: [allFilesSupported],
     plugins: {
       security: securityPlugin,
     },

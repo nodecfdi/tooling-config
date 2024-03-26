@@ -1,6 +1,6 @@
 import unicorn from 'eslint-plugin-unicorn';
 import { type ExportableConfigAtom, type Rules } from '../types/flat_config.js';
-import { supportedFileTypes } from './constants.js';
+import { allFilesSupported } from './constants.js';
 
 const unicornHandPickedRules: Rules = {
   'unicorn/better-regex': 'error',
@@ -52,7 +52,7 @@ const unicornHandPickedRules: Rules = {
 
 export const getUnicornConfig = (): ExportableConfigAtom => {
   return {
-    files: [supportedFileTypes],
+    files: [allFilesSupported],
     plugins: { unicorn },
     rules: unicornHandPickedRules,
   };

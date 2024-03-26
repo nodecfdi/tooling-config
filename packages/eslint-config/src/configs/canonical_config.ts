@@ -1,6 +1,6 @@
 import canonicalPlugin from 'eslint-plugin-canonical';
 import { type ExportableConfigAtom, type Rules } from '../types/flat_config.js';
-import { supportedFileTypes } from './constants.js';
+import { allFilesSupported } from './constants.js';
 
 const canonicalHandPickedRules: Rules = {
   'canonical/destructuring-property-newline': 'off',
@@ -21,7 +21,7 @@ const canonicalHandPickedRules: Rules = {
 
 export const getCanonicalConfig = (): ExportableConfigAtom => {
   return {
-    files: [supportedFileTypes],
+    files: [allFilesSupported],
     plugins: {
       canonical: canonicalPlugin,
     },

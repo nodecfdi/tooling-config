@@ -1,5 +1,6 @@
 import pluginVue from 'eslint-plugin-vue';
 import { type ExportableConfigAtom, type Rules } from '../types/flat_config.js';
+import { allJsExtensions } from './constants.js';
 
 const vueHandPickedRules: Rules = {
   'vue/block-lang': [
@@ -30,7 +31,7 @@ const vueHandPickedRules: Rules = {
   'vue/padding-line-between-blocks': 'error',
   'vue/prefer-true-attribute-shorthand': 'error',
   'vue/require-typed-ref': 'error',
-  'vue/static-class-names-order': 'error',
+  'vue/static-class-names-order': 'off',
 };
 
 export const getVueConfig = (): ExportableConfigAtom[] => {
@@ -39,6 +40,14 @@ export const getVueConfig = (): ExportableConfigAtom[] => {
     {
       files: ['**/*.vue'],
       rules: vueHandPickedRules,
+    },
+    {
+      files: [`**/composables/**/*.{${allJsExtensions}}`],
+      rules: {
+        'unicorn/consistent-function-scoping': 'off',
+        '@typescript-eslint/explicit-function-return-type': 'off',
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
+      },
     },
   ];
 };

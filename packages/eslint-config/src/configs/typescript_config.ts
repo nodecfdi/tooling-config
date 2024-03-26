@@ -1,7 +1,7 @@
 import eslintRecommended from '@eslint/js';
 import { configs, plugin } from 'typescript-eslint';
 import { type ExportableConfigAtom, type Rules } from '../types/flat_config.js';
-import { allJsExtensions, supportedFileTypes } from './constants.js';
+import { allFilesSupported } from './constants.js';
 
 const tsNamingConventionRule: Rules = {
   '@typescript-eslint/naming-convention': [
@@ -25,14 +25,6 @@ const tsNamingConventionRule: Rules = {
       leadingUnderscore: 'allowSingleOrDouble',
       selector: 'typeLike',
       trailingUnderscore: 'allowSingleOrDouble',
-    },
-    {
-      format: ['PascalCase'],
-      leadingUnderscore: 'allowSingleOrDouble',
-      prefix: ['is', 'has', 'should', 'can'],
-      selector: 'variable',
-      trailingUnderscore: 'allowSingleOrDouble',
-      types: ['boolean'],
     },
     {
       format: null,
@@ -152,17 +144,17 @@ export const getTypescriptConfig = (): ExportableConfigAtom[] => {
 
   return [
     {
-      files: [supportedFileTypes],
+      files: [allFilesSupported],
       rules: eslintRecommended.configs.recommended.rules,
     },
     {
-      files: [`**/*.{${allJsExtensions},.d.ts}`],
+      files: [allFilesSupported],
       plugins: {
         '@typescript-eslint': plugin,
       },
     },
     {
-      files: [supportedFileTypes],
+      files: [allFilesSupported],
       rules: {
         ...tseslintRules,
         ...typescriptHandPickedRules,

@@ -20,6 +20,7 @@ import { getTsdocConfig } from './configs/tsdoc_config.js';
 import { getTypescriptConfig } from './configs/typescript_config.js';
 import { getUnicornConfig } from './configs/unicorn_config.js';
 import { getVitestConfig } from './configs/vitest_config.js';
+import { getVueAccessibilityConfig } from './configs/vue_accessibility_config.js';
 import { getVueConfig } from './configs/vue_config.js';
 import { type ExportableConfigAtom } from './types/flat_config.js';
 import type NodecfdiSettings from './types/node_settings.js';
@@ -82,7 +83,7 @@ export const getExportableConfig = (
   }
 
   if (userConfigChoices.vue) {
-    exportableConfig.push(...getVueConfig());
+    exportableConfig.push(...getVueConfig(), getVueAccessibilityConfig());
   }
 
   exportableConfig.push(...getPrettierConfig());

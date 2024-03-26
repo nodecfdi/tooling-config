@@ -1,6 +1,6 @@
 /* eslint-disable sonarjs/no-duplicate-string */
 import { type ExportableConfigAtom, type Rules } from '../types/flat_config.js';
-import { supportedFileTypes } from './constants.js';
+import { allFilesSupported } from './constants.js';
 
 const eslintBaseHandPickedRules: Rules = {
   'array-callback-return': ['error', { allowImplicit: true, checkForEach: true }],
@@ -33,7 +33,7 @@ const eslintBaseHandPickedRules: Rules = {
   'no-new-object': 'error',
   'no-new-wrappers': 'error',
   'no-octal-escape': 'error',
-  'no-param-reassign': ['error', { props: true }],
+  'no-param-reassign': ['error', { props: false }],
   'no-plusplus': 'error',
   'no-promise-executor-return': 'error',
   'no-proto': 'error',
@@ -108,13 +108,13 @@ const eslintBaseHandPickedRules: Rules = {
   'prefer-object-has-own': 'error',
   'prefer-object-spread': 'error',
   'prefer-template': 'error',
-  'require-atomic-updates': 'error',
+  'require-atomic-updates': ['error', { allowProperties: true }],
   'strict': ['error', 'never'], // we are using the eslint-plugin-arrow-return-style version
 };
 
 export const getEslintBaseConfig = (): ExportableConfigAtom => {
   return {
-    files: [supportedFileTypes],
+    files: [allFilesSupported],
     rules: eslintBaseHandPickedRules,
   };
 };
