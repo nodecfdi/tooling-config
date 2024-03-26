@@ -1,5 +1,14 @@
 # @nodecfdi/tooling-config Changelog
 
+## 1.3.0
+
+### Minor - Update eslint config with vue support
+
+- add vue support and small refactoring
+- fix types
+- update dependencies
+- downgrade commitlint with support vscode plugin
+
 ## 1.2.0
 
 ### Minor - Update eslint config

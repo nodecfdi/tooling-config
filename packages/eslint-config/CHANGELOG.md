@@ -1,5 +1,14 @@
 # @nodecfdi/eslint-config
 
+## 1.5.0
+
+### Minor Changes - Add Vue Accessibility Plugin
+
+- add vue accessibility plugin
+- fix supported files with vue support
+- update rules four review
+- update dependencies
+
 ## 1.4.1
 
 ### Patch Changes - Fix correct usage of config vue3
