@@ -12,6 +12,7 @@ export const getSonarjsConfig = (): ExportableConfigAtom => {
     files: [allFilesSupported],
     plugins: { sonarjs },
     rules: {
+      // eslint-disable-next-line import/no-named-as-default-member
       ...sonarjs.configs.recommended.rules,
       ...sonarjsHandPickedRules,
     },

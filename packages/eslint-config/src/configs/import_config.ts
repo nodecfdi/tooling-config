@@ -75,19 +75,16 @@ export const getImportConfig = (): ExportableConfigAtom[] => {
       plugins: { import: pluginImport },
       rules: importHandPickedRules,
       settings: {
-        'import/extensions': [...typescriptExtensions, '.vue'],
-        'import/external-module-folders': ['node_modules', 'node_modules/@types'],
         'import/parsers': {
-          'espree': ['.js', '.cjs', '.mjs', '.jxs'],
           '@typescript-eslint/parser': ['.ts', '.tsx'],
-          'vue-eslint-parser': ['.vue'],
         },
         'import/resolver': {
-          node: true,
           typescript: {
             alwaysTryTypes: true,
-            extensions: typescriptExtensions,
           },
+        },
+        'node': {
+          tryExtensions: [...typescriptExtensions, '.json', '.node', '.d.ts'],
         },
       },
     },

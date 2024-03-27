@@ -32,8 +32,8 @@ const vueHandPickedRules: Rules = {
   'vue/prefer-true-attribute-shorthand': 'error',
   'vue/require-typed-ref': 'error',
   'vue/static-class-names-order': 'off',
-  // Because are usage setup not define default export
-  'import/default': 'off',
+  // Disable usage in vue files
+  'sonarjs/no-duplicate-string': 'off',
 };
 
 export const getVueConfig = (): ExportableConfigAtom[] => {

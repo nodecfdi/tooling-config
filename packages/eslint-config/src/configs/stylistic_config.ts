@@ -17,6 +17,7 @@ const stylisticHandPickedRules: Rules = {
     //require blank lines before all return statements, like the newline-before-return rule.
     { blankLine: 'always', next: 'return', prev: '*' },
   ],
+  '@stylistic/lines-between-class-members': ['error', 'always'],
   '@stylistic/semi': ['error', 'always'],
   '@stylistic/no-extra-semi': 'error',
   '@stylistic/comma-spacing': 'error',
