@@ -1,5 +1,13 @@
 # @nodecfdi/eslint-config
 
+## 1.5.3
+
+### Patch Changes - Fix plugin import
+
+- solve problem with import extensions
+- refactor on stylistic plugins with class members
+- small refactoring
+
 ## 1.5.2
 
 ### Patch Changes - Fix import plugin vue support
