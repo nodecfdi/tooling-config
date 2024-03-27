@@ -19,6 +19,7 @@ const stylisticHandPickedRules: Rules = {
   ],
   '@stylistic/semi': ['error', 'always'],
   '@stylistic/no-extra-semi': 'error',
+  '@stylistic/comma-spacing': 'error',
 };
 
 export const getStylisticConfig = (): ExportableConfigAtom => {

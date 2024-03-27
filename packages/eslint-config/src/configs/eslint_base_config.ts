@@ -29,7 +29,8 @@ const eslintBaseHandPickedRules: Rules = {
   'no-multi-assign': 'error',
   'no-multi-str': 'error',
   'no-negated-condition': 'error',
-  'no-nested-ternary': 'error',
+  // we are using the unicorn version
+  'no-nested-ternary': 'off',
   'no-new-object': 'error',
   'no-new-wrappers': 'error',
   'no-octal-escape': 'error',

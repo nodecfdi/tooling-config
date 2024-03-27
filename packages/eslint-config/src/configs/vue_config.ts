@@ -32,6 +32,8 @@ const vueHandPickedRules: Rules = {
   'vue/prefer-true-attribute-shorthand': 'error',
   'vue/require-typed-ref': 'error',
   'vue/static-class-names-order': 'off',
+  // Because are usage setup not define default export
+  'import/default': 'off',
 };
 
 export const getVueConfig = (): ExportableConfigAtom[] => {
@@ -47,6 +49,17 @@ export const getVueConfig = (): ExportableConfigAtom[] => {
         'unicorn/consistent-function-scoping': 'off',
         '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/explicit-module-boundary-types': 'off',
+      },
+    },
+    {
+      files: [
+        '**/pages/**/*.{js,ts,vue}',
+        '**/layouts/**/*.{js,ts,vue}',
+        '**/app.{js,ts,vue}',
+        '**/error.{js,ts,vue}',
+      ],
+      rules: {
+        'vue/multi-word-component-names': 'off',
       },
     },
   ];

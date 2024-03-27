@@ -16,11 +16,11 @@ export const getAdonisJsConfig = (): ExportableConfigAtom[] => {
     },
     {
       files: [
-        'database/migrations/*.ts',
-        'database/factories/*.ts',
-        'bin/*.ts',
-        'commands/*.ts',
-        'app/middleware/*.ts',
+        '**/database/migrations/*.ts',
+        '**/database/factories/*.ts',
+        '**/bin/*.ts',
+        '**/commands/*.ts',
+        '**/app/middleware/*.ts',
       ],
       rules: {
         '@typescript-eslint/require-await': 'off',
@@ -30,7 +30,7 @@ export const getAdonisJsConfig = (): ExportableConfigAtom[] => {
       },
     },
     {
-      files: ['config/*.ts'],
+      files: ['**/config/*.ts'],
       rules: {
         '@typescript-eslint/consistent-type-definitions': 'off',
         '@typescript-eslint/no-empty-interface': 'off',
@@ -38,7 +38,7 @@ export const getAdonisJsConfig = (): ExportableConfigAtom[] => {
       },
     },
     {
-      files: ['bin/*.ts'],
+      files: ['**/bin/*.ts'],
       rules: {
         '@typescript-eslint/no-misused-promises': 'off',
         'unicorn/prefer-top-level-await': 'off',
