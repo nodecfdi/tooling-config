@@ -17,6 +17,7 @@ const importHandPickedRules: Rules = {
         graphql: 'always',
         json: 'always',
         svg: 'always',
+        vue: 'always',
       },
     },
   ],
