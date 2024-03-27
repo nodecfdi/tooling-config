@@ -1,5 +1,11 @@
 # @nodecfdi/eslint-config
 
+## 1.5.2
+
+### Patch Changes - Fix import plugin vue support
+
+- fix vue import extension always
+
 ## 1.5.1
 
 ### Patch Changes - Fix latest vue support
