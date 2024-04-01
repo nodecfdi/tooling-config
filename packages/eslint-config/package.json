@@ -33,9 +33,9 @@
   "homepage": "https://github.com/nodecfdi/tooling-config",
   "devDependencies": {
     "@nodecfdi/tsconfig": "workspace:*",
-    "@types/eslint-config-prettier": "^6.11.3",
-    "@types/eslint__js": "^8.42.3",
-    "tsup": "^8.0.2"
+    "@types/eslint-config-prettier": "6.11.3",
+    "@types/eslint__js": "8.42.3",
+    "tsup": "8.0.2"
   },
   "dependencies": {
     "@adonisjs/eslint-plugin": "^1.3.0",
