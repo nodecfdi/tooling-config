@@ -19,7 +19,6 @@
     "strictBindCallApply": true,
     "strictFunctionTypes": true,
     "noImplicitThis": true,
-    "skipLibCheck": true,
-    "noEmit": true
+    "skipLibCheck": true
   }
 }

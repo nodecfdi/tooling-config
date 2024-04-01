@@ -13,11 +13,13 @@
   "type": "module",
   "exports": {
     "./tsconfig.base.json": "./tsconfig.base.json",
-    "./tsconfig.client.json": "./tsconfig.client.json"
+    "./tsconfig.client.json": "./tsconfig.client.json",
+    "./tsconfig.app.json": "./tsconfig.app.json"
   },
   "files": [
     "tsconfig.base.json",
-    "tsconfig.client.json"
+    "tsconfig.client.json",
+    "tsconfig.app.json"
   ],
   "scripts": {},
   "repository": "https://github.com/nodecfdi/tooling-config",
