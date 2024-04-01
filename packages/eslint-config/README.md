@@ -26,6 +26,8 @@ yarn add -D eslint @nodecfdi/eslint-config
 pnpm add -D eslint @nodecfdi/eslint-config
 ```
 
+Opcional puedes instalar `eslint-define-config`
+
 ## Uso básico
 
 Para habilitar está configuración crea un archivo `eslint.config.js` en el root del proyecto y copia y pega el siguiente contenido:

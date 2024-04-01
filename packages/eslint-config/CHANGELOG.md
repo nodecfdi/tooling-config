@@ -1,5 +1,14 @@
 # @nodecfdi/eslint-config
 
+## 1.5.4
+
+### Patch Changes - Fix plugin import and review 6 in rules
+
+- resolve import problems and review 6 in rules
+- update dependencies
+- update rules review 6
+- small refactoring code
+
 ## 1.5.3
 
 ### Patch Changes - Fix plugin import
