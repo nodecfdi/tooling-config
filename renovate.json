@@ -4,7 +4,7 @@
   "rangeStrategy": "replace",
   "labels": ["dependencies"],
   "timezone": "America/Mexico_City",
-  "ignoreDeps": [],
+  "ignoreDeps": ["@commitlint/cli", "@commitlint/config-conventional"],
   "packageRules": [
     {
       "matchPackagePatterns": ["eslint"],
