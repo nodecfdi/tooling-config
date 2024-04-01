@@ -34,6 +34,7 @@ const vueHandPickedRules: Rules = {
   'vue/static-class-names-order': 'off',
   // Disable usage in vue files
   'sonarjs/no-duplicate-string': 'off',
+  '@typescript-eslint/no-non-null-assertion': 'off',
 };
 
 export const getVueConfig = (): ExportableConfigAtom[] => {

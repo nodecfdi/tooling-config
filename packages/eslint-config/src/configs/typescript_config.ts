@@ -128,6 +128,13 @@ const typescriptHandPickedRules: Rules = {
     },
   ],
   '@typescript-eslint/restrict-template-expressions': 'off',
+  '@typescript-eslint/no-extraneous-class': [
+    'error',
+    {
+      allowStaticOnly: true,
+      allowWithDecorator: true,
+    },
+  ],
 };
 
 export const getTypescriptConfig = (): ExportableConfigAtom[] => {

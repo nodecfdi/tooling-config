@@ -76,7 +76,9 @@ export const getImportConfig = (): ExportableConfigAtom[] => {
       rules: importHandPickedRules,
       settings: {
         'import/parsers': {
+          'espree': ['.js', '.cjs', '.mjs', '.jxs'],
           '@typescript-eslint/parser': ['.ts', '.tsx'],
+          'vue-eslint-parser': ['.vue'],
         },
         'import/resolver': {
           typescript: {
