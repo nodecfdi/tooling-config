@@ -1,5 +1,11 @@
 # @nodecfdi/tsconfig
 
+## 1.3.1
+
+### Patch Changes - NoEmit in client config
+
+- disable emit on client config
+
 ## 1.3.0
 
 ### Minor Changes - Add package config
