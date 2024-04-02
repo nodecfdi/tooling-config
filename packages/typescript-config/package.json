@@ -20,7 +20,8 @@
   "files": [
     "tsconfig.base.json",
     "tsconfig.client.json",
-    "tsconfig.app.json"
+    "tsconfig.app.json",
+    "tsconfig.package.json"
   ],
   "scripts": {},
   "repository": "https://github.com/nodecfdi/tooling-config",
