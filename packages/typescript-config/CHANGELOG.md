@@ -1,5 +1,12 @@
 # @nodecfdi/tsconfig
 
+## 1.3.2
+
+### Patch Changes - File include latest release
+
+- fix files included export
+- resolve package config
+
 ## 1.3.1
 
 ### Patch Changes - NoEmit in client config
