@@ -1,4 +1,8 @@
-export const typescriptExtensions = ['.js', '.mjs', '.cjs', '.ts', '.mts', '.cts'];
+export const typescriptExtensions = ['.ts', '.tsx', '.mts', '.cts'];
+
+export const jsExtensions = ['.js', '.jsx', '.mjs', '.cjs'];
+
+export const jsAndTsExtensions = [...typescriptExtensions, ...jsExtensions];
 
 export const allJsExtensions = 'js,mjs,cjs,ts,mts,cts';
 

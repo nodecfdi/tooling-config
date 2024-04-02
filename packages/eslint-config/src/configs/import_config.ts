@@ -1,14 +1,20 @@
-import pluginImport from 'eslint-plugin-import';
+import pluginImport from 'eslint-plugin-import-x';
 import { type ExportableConfigAtom, type Rules } from '../types/flat_config.js';
-import { allFilesSupported, allJsExtensions, typescriptExtensions } from './constants.js';
+import {
+  allFilesSupported,
+  allJsExtensions,
+  jsAndTsExtensions,
+  jsExtensions,
+  typescriptExtensions,
+} from './constants.js';
 
 const importHandPickedRules: Rules = {
-  'import/consistent-type-specifier-style': ['error', 'prefer-inline'],
-  'import/default': 'error',
-  'import/dynamic-import-chunkname': 'off',
-  'import/export': 'error',
-  'import/exports-last': 'off',
-  'import/extensions': [
+  'import-x/consistent-type-specifier-style': ['error', 'prefer-inline'],
+  'import-x/default': 'error',
+  'import-x/dynamic-import-chunkname': 'off',
+  'import-x/export': 'error',
+  'import-x/exports-last': 'off',
+  'import-x/extensions': [
     'error',
     'never',
     {
@@ -21,79 +27,80 @@ const importHandPickedRules: Rules = {
       },
     },
   ],
-  'import/first': 'error',
-  'import/group-exports': 'off',
-  'import/max-dependencies': 'off',
-  'import/named': 'off',
-  'import/namespace': 'off',
-  'import/newline-after-import': 'error',
-  'import/no-absolute-path': 'error',
-  'import/no-amd': 'error',
-  'import/no-anonymous-default-export': 'off',
-  'import/no-commonjs': 'off',
-  'import/no-cycle': 'error',
-  'import/no-default-export': 'off',
-  'import/no-deprecated': 'warn',
-  'import/no-duplicates': ['error', { 'prefer-inline': true }],
-  'import/no-extraneous-dependencies': [
+  'import-x/first': 'error',
+  'import-x/group-exports': 'off',
+  'import-x/max-dependencies': 'off',
+  // TypeScript compilation already ensures that named imports exist in the referenced module
+  'import-x/named': 'off',
+  'import-x/namespace': 'off',
+  'import-x/newline-after-import': 'error',
+  'import-x/no-absolute-path': 'error',
+  'import-x/no-amd': 'error',
+  'import-x/no-anonymous-default-export': 'off',
+  'import-x/no-commonjs': 'off',
+  'import-x/no-cycle': 'error',
+  'import-x/no-default-export': 'off',
+  'import-x/no-deprecated': 'warn',
+  'import-x/no-duplicates': ['error', { 'prefer-inline': true }],
+  'import-x/no-extraneous-dependencies': [
     'error',
     { devDependencies: true, optionalDependencies: true, peerDependencies: true },
   ],
-  'import/no-import-module-exports': 'off',
-  'import/no-internal-modules': 'off',
-  'import/no-mutable-exports': 'error',
-  'import/no-named-as-default': 'error',
-  'import/no-named-as-default-member': 'error',
-  'import/no-named-default': 'error',
-  'import/no-named-export': 'off',
-  'import/no-namespace': 'off',
-  'import/no-nodejs-modules': 'off',
-  'import/no-relative-packages': 'off',
-  'import/no-relative-parent-imports': 'off',
-  'import/no-restricted-paths': 'off',
-  'import/no-self-import': 'error',
-  'import/no-unassigned-import': ['error', { allow: ['**/*.{css,sass,scss}', 'reflect-metadata'] }],
-  'import/no-unresolved': 'off',
-  'import/no-unused-modules': 'off',
-  'import/no-useless-path-segments': [
+  'import-x/no-import-module-exports': 'off',
+  'import-x/no-internal-modules': 'off',
+  'import-x/no-mutable-exports': 'error',
+  'import-x/no-named-as-default': 'error',
+  'import-x/no-named-default': 'error',
+  'import-x/no-named-export': 'off',
+  'import-x/no-namespace': 'off',
+  'import-x/no-nodejs-modules': 'off',
+  'import-x/no-relative-packages': 'off',
+  'import-x/no-relative-parent-imports': 'off',
+  'import-x/no-restricted-paths': 'off',
+  'import-x/no-self-import': 'error',
+  'import-x/no-unassigned-import': [
+    'error',
+    { allow: ['**/*.{css,sass,scss}', 'reflect-metadata'] },
+  ],
+  'import-x/no-unresolved': 'off',
+  'import-x/no-unused-modules': 'off',
+  'import-x/no-useless-path-segments': [
     'error',
     {
       noUselessIndex: true,
     },
   ],
-  'import/no-webpack-loader-syntax': 'error',
-  'import/order': 'off',
-  'import/prefer-default-export': 'off',
-  'import/unambiguous': 'off',
-  'import/no-dynamic-require': 'off',
+  'import-x/no-webpack-loader-syntax': 'error',
+  'import-x/order': 'off',
+  'import-x/prefer-default-export': 'off',
+  'import-x/unambiguous': 'off',
+  'import-x/no-dynamic-require': 'off',
 };
 
 export const getImportConfig = (): ExportableConfigAtom[] => {
   return [
     {
       files: [allFilesSupported],
-      plugins: { import: pluginImport },
+      plugins: { 'import-x': pluginImport },
       rules: importHandPickedRules,
       settings: {
-        'import/parsers': {
-          'espree': ['.js', '.cjs', '.mjs', '.jxs'],
-          '@typescript-eslint/parser': ['.ts', '.tsx'],
-          'vue-eslint-parser': ['.vue'],
+        'import-x/extensions': jsAndTsExtensions,
+        'import-x/external-module-folders': ['node_modules', 'node_modules/@types'],
+        'import-x/parsers': {
+          'espree': jsExtensions,
+          '@typescript-eslint/parser': typescriptExtensions,
         },
-        'import/resolver': {
-          typescript: {
-            alwaysTryTypes: true,
+        'import-x/resolver': {
+          node: {
+            extensions: jsAndTsExtensions,
           },
-        },
-        'node': {
-          tryExtensions: [...typescriptExtensions, '.json', '.node', '.d.ts'],
         },
       },
     },
     {
       files: [`**/*.config.{${allJsExtensions}}`],
       rules: {
-        'import/no-default-export': 'off',
+        'import-x/no-default-export': 'off',
       },
     },
     {
