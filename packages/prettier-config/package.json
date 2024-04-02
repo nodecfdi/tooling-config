@@ -1,6 +1,6 @@
 {
   "name": "@nodecfdi/prettier-config",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Prettier config for NodeCfdi projects",
   "keywords": [
     "prettier",
