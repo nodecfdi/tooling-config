@@ -1,5 +1,13 @@
 # @nodecfdi/tsconfig
 
+## 1.3.0
+
+### Minor Changes - Add package config
+
+- refactor in base config
+- add config `package` for usage with package libs
+- update dependencies
+
 ## 1.2.0
 
 ### Minor Changes - Add app config

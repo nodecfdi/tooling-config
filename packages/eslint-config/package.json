@@ -1,6 +1,6 @@
 {
   "name": "@nodecfdi/eslint-config",
-  "version": "1.5.4",
+  "version": "1.5.5",
   "description": "Base Eslint config for NodeCfdi projects",
   "keywords": [
     "eslint",

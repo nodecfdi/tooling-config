@@ -1,5 +1,14 @@
 # @nodecfdi/tooling-config Changelog
 
+## 1.4.0
+
+### Minor - Update eslint, prettier, and tsconfig
+
+- add support to package libs
+- update dependencies
+- fix plugin import on eslint
+- add missing types
+
 ## 1.3.0
 
 ### Minor - Update eslint config with vue support

@@ -1,5 +1,14 @@
 # @nodecfdi/eslint-config
 
+## 1.5.5
+
+### Patch Changes - Refactoring plugin import
+
+- move from eslint-plugin-import to use eslint-plugin-import-x
+- update dependencies
+- move tsconfig
+- update rules review 7
+
 ## 1.5.4
 
 ### Patch Changes - Fix plugin import and review 6 in rules
