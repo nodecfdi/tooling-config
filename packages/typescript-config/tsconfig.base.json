@@ -9,6 +9,7 @@
     "noUnusedParameters": true,
     "strict": true,
     "isolatedModules": true,
+    "removeComments": true,
     "esModuleInterop": true,
     "strictNullChecks": true,
     "allowSyntheticDefaultImports": true,
@@ -20,5 +21,8 @@
     "strictFunctionTypes": true,
     "noImplicitThis": true,
     "skipLibCheck": true
+  },
+  "ts-node": {
+    "swc": true
   }
 }
