@@ -11,10 +11,12 @@
   "license": "MIT",
   "type": "module",
   "main": "./prettier.config.js",
+  "types": "./index.d.ts",
   "exports": {
     ".": "./prettier.config.js"
   },
   "files": [
+    "index.d.ts",
     "prettier.config.js"
   ],
   "scripts": {},
