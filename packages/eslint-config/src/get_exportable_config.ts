@@ -1,34 +1,34 @@
 import getGitignorePatterns from 'eslint-config-flat-gitignore';
+import { type FlatESLintConfig } from 'eslint-define-config';
 import { parser as tsParser } from 'typescript-eslint';
 import vueParser from 'vue-eslint-parser';
-import { getAdonisJsConfig } from './configs/adonisjs_config.js';
-import { getArrowReturnStyleConfig } from './configs/arrow_return_style_config.js';
-import { getCanonicalConfig } from './configs/canonical_config.js';
-import { getCommentsConfig } from './configs/comments_config.js';
-import { ignores } from './configs/constants.js';
-import { getEarlyReturnConfig } from './configs/early_return_config.js';
-import { getEslintBaseConfig } from './configs/eslint_base_config.js';
-import { getImportConfig } from './configs/import_config.js';
-import { getPrettierConfig } from './configs/prettier_config.js';
-import { getPromiseConfig } from './configs/promise_config.js';
-import { getRegexpConfig } from './configs/regexp_config.js';
-import { getSecurityConfig } from './configs/security_config.js';
-import { getSimpleImportSortConfig } from './configs/simple_import_sort_config.js';
-import { getSonarjsConfig } from './configs/sonarjs_config.js';
-import { getStylisticConfig } from './configs/stylistic_config.js';
-import { getTsdocConfig } from './configs/tsdoc_config.js';
-import { getTypescriptConfig } from './configs/typescript_config.js';
-import { getUnicornConfig } from './configs/unicorn_config.js';
-import { getVitestConfig } from './configs/vitest_config.js';
-import { getVueAccessibilityConfig } from './configs/vue_accessibility_config.js';
-import { getVueConfig } from './configs/vue_config.js';
-import { type ExportableConfigAtom } from './types/flat_config.js';
-import type NodecfdiSettings from './types/node_settings.js';
+import { adonisjsConfig } from './configs/adonisjs_config.js';
+import { arrowReturnStyleConfig } from './configs/arrow_return_style_config.js';
+import { canonicalConfig } from './configs/canonical_config.js';
+import { commentsConfig } from './configs/comments_config.js';
+import { earlyReturnConfig } from './configs/early_return_config.js';
+import { eslintBaseConfig } from './configs/eslint_base_config.js';
+import { importConfig } from './configs/import_config.js';
+import { prettierConfig } from './configs/prettier_config.js';
+import { promiseConfig } from './configs/promise_config.js';
+import { regexpConfig } from './configs/regexp_config.js';
+import { securityConfig } from './configs/security_config.js';
+import { simpleImportSortConfig } from './configs/simple_import_sort_config.js';
+import { sonarjsConfig } from './configs/sonarjs_config.js';
+import { stylisticConfig } from './configs/stylistic_config.js';
+import { tsdocConfig } from './configs/tsdoc_config.js';
+import { typescriptConfig } from './configs/typescript_config.js';
+import { unicornConfig } from './configs/unicorn_config.js';
+import { vitestConfig } from './configs/vitest_config.js';
+import { vueAccessibilityConfig } from './configs/vue_accessibility_config.js';
+import { vueConfig } from './configs/vue_config.js';
+import { ignores } from './constants.js';
+import { type NodecfdiSettings } from './types.js';
 
-const getLanguageOptionsTypescript = (
+const getLanguageOptionsTypescript = <T = NodeCfdiFlatAtomConfig['languageOptions']>(
   userChosenTsConfig?: string | string[],
   vueSupport = false,
-) => {
+): T => {
   return {
     parser: vueSupport ? vueParser : tsParser,
     parserOptions: {
@@ -38,55 +38,53 @@ const getLanguageOptionsTypescript = (
       project: userChosenTsConfig || true,
       extraFileExtensions: vueSupport ? ['.vue'] : undefined,
     },
-  };
+  } as T;
 };
 
-export const getExportableConfig = (
-  userConfigPrefers?: NodecfdiSettings,
-): ExportableConfigAtom[] => {
+export const getExportableConfig = (userConfigPrefers?: NodecfdiSettings): FlatESLintConfig[] => {
   const userConfigChoices = userConfigPrefers ?? {
     vitest: true,
     adonisjs: false,
     vue: false,
   };
 
-  const exportableConfig: ExportableConfigAtom[] = [
+  const exportableConfig: NodeCfdiFlatConfig = [
     {
       languageOptions: getLanguageOptionsTypescript(
-        userConfigChoices.pathsOveriddes?.tsconfigLocation,
+        userConfigChoices.pathsOverrides?.tsconfigLocation,
         userConfigChoices.vue,
       ),
     },
-    ...getTypescriptConfig(),
-    getCanonicalConfig(),
-    getTsdocConfig(),
-    getEslintBaseConfig(),
-    getUnicornConfig(),
-    getSimpleImportSortConfig(),
-    getRegexpConfig(),
-    getStylisticConfig(),
-    getEarlyReturnConfig(),
-    getSonarjsConfig(),
-    getArrowReturnStyleConfig(),
-    ...getImportConfig(),
-    getCommentsConfig(),
-    getPromiseConfig(),
-    getSecurityConfig(),
+    ...typescriptConfig,
+    canonicalConfig,
+    tsdocConfig,
+    eslintBaseConfig,
+    unicornConfig,
+    simpleImportSortConfig,
+    regexpConfig,
+    stylisticConfig,
+    earlyReturnConfig,
+    sonarjsConfig,
+    arrowReturnStyleConfig,
+    ...importConfig,
+    commentsConfig,
+    promiseConfig,
+    securityConfig,
   ];
 
   if (userConfigChoices.vitest) {
-    exportableConfig.push(getVitestConfig(userConfigChoices.pathsOveriddes?.tests));
+    exportableConfig.push(vitestConfig(userConfigChoices));
   }
 
   if (userConfigChoices.adonisjs) {
-    exportableConfig.push(...getAdonisJsConfig());
+    exportableConfig.push(...adonisjsConfig);
   }
 
   if (userConfigChoices.vue) {
-    exportableConfig.push(...getVueConfig(), getVueAccessibilityConfig());
+    exportableConfig.push(...vueConfig, vueAccessibilityConfig);
   }
 
-  exportableConfig.push(...getPrettierConfig());
+  exportableConfig.push(...prettierConfig);
 
   const hasIgnoresRecommended =
     userConfigChoices.ignores?.recommended === undefined

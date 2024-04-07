@@ -12,27 +12,38 @@ declare module 'eslint-plugin-simple-import-sort';
 declare module 'eslint-plugin-security';
 
 declare module 'eslint-plugin-regexp' {
-  import { type TSESLint } from '@typescript-eslint/utils';
-
-  declare const configs: FlatRecommendedConfigs<TSESLint.FlatConfig.Config>;
+  declare const configs: FlatRecommendedConfigs<NodeCfdiFlatAtomConfig>;
 }
 
 declare module 'eslint-plugin-unicorn' {
-  import { type TSESLint } from '@typescript-eslint/utils';
-
-  declare const configs: FlatRecommendedConfigs<TSESLint.FlatConfig.Config>;
-}
-
-declare module 'eslint-plugin-sonarjs' {
-  import { type TSESLint } from '@typescript-eslint/utils';
-
-  declare const configs: {
-    recommended: TSESLint.FlatConfig.Config;
-  };
+  declare const configs: FlatRecommendedConfigs<NodeCfdiFlatAtomConfig>;
 }
 
 declare module 'eslint-plugin-vue' {
-  import { type TSESLint } from '@typescript-eslint/utils';
+  declare const configs: FlatRecommendedConfigs<NodeCfdiFlatAtomConfig[]>;
+}
 
-  declare const configs: FlatRecommendedConfigs<TSESLint.FlatConfig.Config[]>;
+declare module 'eslint-plugin-vitest' {
+  declare const configs: {
+    recommended: NodeCfdiFlatAtomConfig;
+  };
+
+  declare const environments: {
+    env: {
+      globals: {
+        suite: true;
+        test: true;
+        describe: true;
+        it: true;
+        expect: true;
+        assert: true;
+        vitest: true;
+        vi: true;
+        beforeAll: true;
+        afterAll: true;
+        beforeEach: true;
+        afterEach: true;
+      };
+    };
+  };
 }

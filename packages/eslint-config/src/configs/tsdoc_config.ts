@@ -1,15 +1,13 @@
 import tsdocPlugin from 'eslint-plugin-tsdoc';
-import { type ExportableConfigAtom } from '../types/flat_config.js';
-import { supportedFileTypes } from './constants.js';
+import { supportedFileTypes } from '../constants.js';
+import { defineConfig } from '../define_config.js';
 
-export const getTsdocConfig = (): ExportableConfigAtom => {
-  return {
-    files: [supportedFileTypes],
-    plugins: {
-      tsdoc: tsdocPlugin,
-    },
-    rules: {
-      'tsdoc/syntax': 'error',
-    },
-  };
-};
+export const tsdocConfig = defineConfig({
+  files: [supportedFileTypes],
+  plugins: {
+    tsdoc: tsdocPlugin,
+  },
+  rules: {
+    'tsdoc/syntax': 'error',
+  },
+});

@@ -1,7 +1,7 @@
 import eslintRecommended from '@eslint/js';
 import { configs, plugin } from 'typescript-eslint';
-import { type ExportableConfigAtom, type Rules } from '../types/flat_config.js';
-import { allFilesSupported } from './constants.js';
+import { allFilesSupported } from '../constants.js';
+import { defineConfig, type Rules } from '../define_config.js';
 
 const tsNamingConventionRule: Rules = {
   '@typescript-eslint/naming-convention': [
@@ -87,7 +87,7 @@ const typescriptHandPickedRules: Rules = {
   '@typescript-eslint/no-empty-function': 'error',
   '@typescript-eslint/no-inferrable-types': 'error',
   '@typescript-eslint/no-loop-func': 'error',
-  '@typescript-eslint/no-non-null-assertion': 'error',
+  '@typescript-eslint/no-non-null-assertion': 'off',
   '@typescript-eslint/no-shadow': [
     'error',
     {
@@ -137,44 +137,38 @@ const typescriptHandPickedRules: Rules = {
   ],
 };
 
-export const getTypescriptConfig = (): ExportableConfigAtom[] => {
-  const tseslintConfigs = [...configs.strictTypeChecked, ...configs.stylisticTypeChecked];
-  const rules = tseslintConfigs.map((config) => config.rules ?? {});
-  let tseslintRules: Rules = {};
+const tseslintRules = [...configs.strictTypeChecked, ...configs.stylisticTypeChecked]
+  .map((config) => config.rules ?? {})
+  // eslint-disable-next-line unicorn/no-array-reduce
+  .reduce((result, current) => {
+    return { ...result, ...current };
+  }, {});
 
-  for (const rule of rules) {
-    tseslintRules = {
+export const typescriptConfig = defineConfig([
+  {
+    files: [allFilesSupported],
+    rules: eslintRecommended.configs.recommended.rules,
+  },
+  {
+    files: [allFilesSupported],
+    plugins: {
+      '@typescript-eslint': plugin,
+    },
+  },
+  {
+    files: [allFilesSupported],
+    rules: {
       ...tseslintRules,
-      ...rule,
-    };
-  }
-
-  return [
-    {
-      files: [allFilesSupported],
-      rules: eslintRecommended.configs.recommended.rules,
+      ...typescriptHandPickedRules,
+      ...tsNamingConventionRule,
     },
-    {
-      files: [allFilesSupported],
-      plugins: {
-        '@typescript-eslint': plugin,
-      },
+  },
+  {
+    files: ['**/*.d.ts'],
+    rules: {
+      '@typescript-eslint/consistent-type-definitions': 'off',
+      '@typescript-eslint/no-empty-interface': 'off',
+      '@typescript-eslint/no-shadow': 'off',
     },
-    {
-      files: [allFilesSupported],
-      rules: {
-        ...tseslintRules,
-        ...typescriptHandPickedRules,
-        ...tsNamingConventionRule,
-      },
-    },
-    {
-      files: ['**/*.d.ts'],
-      rules: {
-        '@typescript-eslint/consistent-type-definitions': 'off',
-        '@typescript-eslint/no-empty-interface': 'off',
-        '@typescript-eslint/no-shadow': 'off',
-      },
-    },
-  ];
-};
+  },
+]);

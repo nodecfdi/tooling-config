@@ -1,15 +1,13 @@
 import eslintPrettierConfig from 'eslint-config-prettier';
-import { type ExportableConfigAtom } from '../types/flat_config.js';
-import { allFilesSupported } from './constants.js';
+import { allFilesSupported } from '../constants.js';
+import { defineConfig } from '../define_config.js';
 
-const prettierOverrides: ExportableConfigAtom = {
-  files: [allFilesSupported],
-  rules: {
-    curly: ['error', 'all'],
-  },
-};
-
-export const getPrettierConfig = (): ExportableConfigAtom[] => [
+export const prettierConfig = defineConfig([
   eslintPrettierConfig,
-  prettierOverrides,
-];
+  {
+    files: [allFilesSupported],
+    rules: {
+      curly: ['error', 'all'],
+    },
+  },
+]);

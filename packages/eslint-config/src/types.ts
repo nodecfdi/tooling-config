@@ -1,4 +1,4 @@
-type NodecfdiSettings = {
+export type NodecfdiSettings = {
   /**
    * Vitest support.
    */
@@ -14,7 +14,7 @@ type NodecfdiSettings = {
   /**
    * This parameter allows you to override the paths for some Nodecfdi settings.
    */
-  pathsOveriddes?: {
+  pathsOverrides?: {
     /**
      * With this setting, if you have multiple tsconfig.json files in your project (like tsconfig.json, tsconfig.eslint.json, tsconfig.node.json, etc...) you can specify which config NodeCfdi will pickup. You can also specify a list of paths, see: https://typescript-eslint.io/linting/typed-linting/monorepos/#one-tsconfigjson-per-package-and-an-optional-one-in-the-root.
      */
@@ -42,5 +42,3 @@ type NodecfdiSettings = {
     additional?: string[];
   };
 };
-
-export default NodecfdiSettings;
