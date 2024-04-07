@@ -1,13 +1,10 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "lib": ["ESNext"],
     "module": "NodeNext",
-    "resolveJsonModule": true,
-    "moduleResolution": "NodeNext",
+    "lib": ["ESNext"],
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "strict": true,
     "isolatedModules": true,
     "removeComments": true,
     "esModuleInterop": true,
