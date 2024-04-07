@@ -28,10 +28,25 @@ pnpm add -D typescript @nodecfdi/tsconfig
 
 ## Uso básico
 
-Si tu estás creando un proyecto NodeCfdi, deberás de extender del archivo `tsconfig.base.json`:
+Para libs de NodeCfdi, deberás de extender del archivo `tsconfig.package.json`:
 
 ```json
 {
-  "extends": "@nodecfdi/tsconfig/tsconfig.base.json"
+  "extends": "@nodecfdi/tsconfig/tsconfig.package.json"
 }
 ```
+
+Si tu estás creando un proyecto NodeCfdi web backend, deberás de extender del archivo `tsconfig.app.json`:
+
+```json
+{
+  "extends": "@nodecfdi/tsconfig/tsconfig.app.json"
+}
+```
+
+Si estás creando un proyecto NodeCfdi web frontend o con algún bundler resolver, deberás de extender del archivo `tsconfig.client.json`:
+
+```json
+{
+  "extends": "@nodecfdi/tsconfig/tsconfig.client.json"
+}

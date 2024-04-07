@@ -1,5 +1,12 @@
 # @nodecfdi/tsconfig
 
+## 1.4.0
+
+### Minor Changes - Revert noEmit property for usage with tsc
+
+- remove default module resolver
+- update configs
+
 ## 1.3.2
 
 ### Patch Changes - File include latest release
