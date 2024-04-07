@@ -1,5 +1,16 @@
 # @nodecfdi/eslint-config
 
+## 1.6.0
+
+### Minor Changes - Fix types, typos and rules
+
+- prepare for latest version eslint 9
+- added correct type export and scaffold of lib
+- refactor code for better wrapper configs
+- update rules for adonisjs
+- update rules review 8
+- update dependencies
+
 ## 1.5.5
 
 ### Patch Changes - Refactoring plugin import

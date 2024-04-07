@@ -33,6 +33,7 @@ Opcional puedes instalar `eslint-define-config`
 Para habilitar está configuración crea un archivo `eslint.config.js` en el root del proyecto y copia y pega el siguiente contenido:
 
 ```js
+// @ts-check
 import { nodecfdiConfig } from '@nodecfdi/eslint-config';
 import { defineFlatConfig } from 'eslint-define-config';
 
@@ -42,6 +43,7 @@ export default defineFlatConfig([...nodecfdiConfig()]);
 Si deseas ajustar algúna regla o habilitar alguna no incluida, puedes extender de está configuración por ejemplo:
 
 ```js
+// @ts-check
 import { nodecfdiConfig } from '@nodecfdi/eslint-config';
 import { defineFlatConfig } from 'eslint-define-config';
 // my other imports...
@@ -71,7 +73,7 @@ type NodecfdiSettings = {
   /**
    * This parameter allows you to override the paths for some Nodecfdi settings.
    */
-  pathsOveriddes?: {
+  pathsOverrides?: {
     /**
      * With this setting, if you have multiple tsconfig.json files in your project (like tsconfig.json, tsconfig.eslint.json, tsconfig.node.json, etc...) you can specify which config NodeCfdi will pickup. You can also specify a list of paths, see: https://typescript-eslint.io/linting/typed-linting/monorepos/#one-tsconfigjson-per-package-and-an-optional-one-in-the-root.
      */
