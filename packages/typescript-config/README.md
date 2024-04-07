@@ -50,3 +50,4 @@ Si estás creando un proyecto NodeCfdi web frontend o con algún bundler resolve
 {
   "extends": "@nodecfdi/tsconfig/tsconfig.client.json"
 }
+```
