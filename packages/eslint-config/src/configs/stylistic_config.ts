@@ -9,14 +9,11 @@ export const stylisticConfig = defineConfig({
     // Prettier doesn't have strong opinions about emptyLines. See: https://prettier.io/docs/en/rationale.html#empty-lines.
     '@stylistic/padding-line-between-statements': [
       'error',
-      // blank lines after every sequence of variable declarations, like the newline-after-var rule.
-      { blankLine: 'always', next: '*', prev: ['const', 'let'] },
       {
-        blankLine: 'any',
-        next: ['const', 'let'],
-        prev: ['const', 'let'],
+        blankLine: 'always',
+        prev: '*',
+        next: ['interface', 'type'],
       },
-
       //require blank lines before all return statements, like the newline-before-return rule.
       { blankLine: 'always', next: 'return', prev: '*' },
     ],

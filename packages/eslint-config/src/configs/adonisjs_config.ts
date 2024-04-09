@@ -26,6 +26,7 @@ export const adonisjsConfig = defineConfig([
       '@typescript-eslint/explicit-function-return-type': 'off',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
       '@typescript-eslint/no-floating-promises': 'off',
+      'unicorn/no-anonymous-default-export': 'off',
     },
   },
   {
@@ -68,6 +69,12 @@ export const adonisjsConfig = defineConfig([
     files: ['**/define_config.ts'],
     rules: {
       '@typescript-eslint/require-await': 'off',
+    },
+  },
+  {
+    files: ['**/tests/**/*.ts'],
+    rules: {
+      '@typescript-eslint/explicit-module-boundary-types': 'off',
     },
   },
 ]);
