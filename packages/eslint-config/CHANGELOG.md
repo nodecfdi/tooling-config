@@ -1,5 +1,14 @@
 # @nodecfdi/eslint-config
 
+## 1.6.1
+
+### Patch Changes - Update dependencies and rules
+
+- update rules for adonisjs config
+- update rules for stylistic config
+- update dependencies
+- remove unused module declaration
+
 ## 1.6.0
 
 ### Minor Changes - Fix types, typos and rules
