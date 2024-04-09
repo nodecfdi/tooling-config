@@ -11,10 +11,6 @@ declare module 'eslint-plugin-vuejs-accessibility';
 declare module 'eslint-plugin-simple-import-sort';
 declare module 'eslint-plugin-security';
 
-declare module 'eslint-plugin-regexp' {
-  declare const configs: FlatRecommendedConfigs<NodeCfdiFlatAtomConfig>;
-}
-
 declare module 'eslint-plugin-unicorn' {
   declare const configs: FlatRecommendedConfigs<NodeCfdiFlatAtomConfig>;
 }
