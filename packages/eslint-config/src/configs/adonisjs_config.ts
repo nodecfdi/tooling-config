@@ -30,19 +30,12 @@ export const adonisjsConfig = defineConfig([
     },
   },
   {
-    files: ['**/config/*.ts'],
+    files: ['**/types.ts', '**/types/**/*.ts', '**/config/*.ts', '**/src/extensions/**/*.ts'],
     rules: {
       '@typescript-eslint/consistent-type-definitions': 'off',
       '@typescript-eslint/no-empty-interface': 'off',
       '@typescript-eslint/no-shadow': 'off',
-    },
-  },
-  {
-    files: ['**/types.ts'],
-    rules: {
-      '@typescript-eslint/consistent-type-definitions': 'off',
-      '@typescript-eslint/no-empty-interface': 'off',
-      '@typescript-eslint/no-shadow': 'off',
+      '@typescript-eslint/method-signature-style': 'off',
     },
   },
   {
@@ -57,6 +50,7 @@ export const adonisjsConfig = defineConfig([
     rules: {
       '@typescript-eslint/explicit-function-return-type': 'off',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
+      'unicorn/no-anonymous-default-export': 'off',
     },
   },
   {
