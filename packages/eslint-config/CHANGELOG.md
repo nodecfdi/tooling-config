@@ -1,5 +1,12 @@
 # @nodecfdi/eslint-config
 
+## 1.6.2
+
+### Patch Changes - Update rules adonisjs
+
+- update rules for adonisjs config
+- update dependencies
+
 ## 1.6.1
 
 ### Patch Changes - Update dependencies and rules
