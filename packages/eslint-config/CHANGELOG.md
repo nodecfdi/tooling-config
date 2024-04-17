@@ -1,5 +1,13 @@
 # @nodecfdi/eslint-config
 
+## 1.6.3
+
+### Patch Changes - Update rules review 10
+
+- update correct typess for eslint-plugin-sort-imports
+- update rules for adonisjs config
+- update dependencies
+
 ## 1.6.2
 
 ### Patch Changes - Update rules adonisjs

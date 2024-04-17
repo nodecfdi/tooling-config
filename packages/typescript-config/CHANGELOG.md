@@ -1,5 +1,13 @@
 # @nodecfdi/tsconfig
 
+## 1.5.0
+
+### Minor Changes - Added support to resolve json files
+
+- update resolve json files
+- update files
+- update dependencies
+
 ## 1.4.0
 
 ### Minor Changes - Revert noEmit property for usage with tsc
