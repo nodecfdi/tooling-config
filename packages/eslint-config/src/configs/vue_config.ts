@@ -15,7 +15,7 @@ export const vueConfig = defineConfig([
           },
         },
       ],
-      'vue/block-order': 'error',
+      'vue/block-order': ['error', { order: ['template', 'script', 'style'] }],
       'vue/block-tag-newline': 'error',
       'vue/component-api-style': ['error', ['script-setup']],
       'vue/component-name-in-template-casing': ['error', 'kebab-case'],

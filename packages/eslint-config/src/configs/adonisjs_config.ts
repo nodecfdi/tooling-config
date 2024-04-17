@@ -17,6 +17,7 @@ export const adonisjsConfig = defineConfig([
     files: [
       '**/database/migrations/*.ts',
       '**/database/factories/*.ts',
+      '**/database/seeders/*.ts',
       '**/bin/*.ts',
       '**/commands/*.ts',
       '**/app/middleware/*.ts',
@@ -35,7 +36,6 @@ export const adonisjsConfig = defineConfig([
       '@typescript-eslint/consistent-type-definitions': 'off',
       '@typescript-eslint/no-empty-interface': 'off',
       '@typescript-eslint/no-shadow': 'off',
-      '@typescript-eslint/method-signature-style': 'off',
     },
   },
   {

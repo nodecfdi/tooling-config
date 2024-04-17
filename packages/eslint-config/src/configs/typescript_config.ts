@@ -82,7 +82,7 @@ const typescriptHandPickedRules: Rules = {
   '@typescript-eslint/dot-notation': 'error',
   '@typescript-eslint/explicit-member-accessibility': 'error',
   '@typescript-eslint/explicit-module-boundary-types': 'error',
-  '@typescript-eslint/method-signature-style': 'error',
+  '@typescript-eslint/method-signature-style': ['error', 'method'],
   '@typescript-eslint/no-array-constructor': 'off',
   '@typescript-eslint/no-empty-function': 'error',
   '@typescript-eslint/no-inferrable-types': 'error',
