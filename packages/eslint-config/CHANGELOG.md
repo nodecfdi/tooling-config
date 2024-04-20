@@ -1,5 +1,16 @@
 # @nodecfdi/eslint-config
 
+## 1.6.4
+
+### Patch Changes - Update rules review 11
+
+- update config languageOptions for unicorn config
+- update rules for vue config
+- update rules for adonisjs config
+- update usage of flat recommended eslint config in vue-accessibility
+- update types for vue-accessibility last release
+- update dependencies
+
 ## 1.6.3
 
 ### Patch Changes - Update rules review 10

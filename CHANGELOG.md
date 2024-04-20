@@ -1,5 +1,12 @@
 # @nodecfdi/tooling-config Changelog
 
+## 1.4.1
+
+### Patch Changes - Update eslint rules
+
+- update rules in eslint review 11
+- update dependencies
+
 ## 1.4.0
 
 ### Minor - Update eslint, prettier, and tsconfig
