@@ -81,7 +81,7 @@ export const getExportableConfig = (userConfigPrefers?: NodecfdiSettings): FlatE
   }
 
   if (userConfigChoices.vue) {
-    exportableConfig.push(...vueConfig, vueAccessibilityConfig);
+    exportableConfig.push(...vueConfig, ...vueAccessibilityConfig);
   }
 
   exportableConfig.push(...prettierConfig);

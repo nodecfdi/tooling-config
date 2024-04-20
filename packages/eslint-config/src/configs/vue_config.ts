@@ -50,13 +50,15 @@ export const vueConfig = defineConfig([
   },
   {
     files: [
-      '**/pages/**/*.{js,ts,vue}',
-      '**/layouts/**/*.{js,ts,vue}',
+      '**/pages/**/*.vue',
+      '**/layouts/**/*.vue',
+      '**/components/**/*.vue',
       '**/app.{js,ts,vue}',
-      '**/error.{js,ts,vue}',
+      '**/error.vue',
     ],
     rules: {
       'vue/multi-word-component-names': 'off',
+      'security/detect-possible-timing-attacks': 'off',
     },
   },
 ]);

@@ -7,7 +7,6 @@ declare module '@eslint-community/eslint-plugin-eslint-comments';
 declare module '@regru/eslint-plugin-prefer-early-return';
 declare module 'eslint-plugin-canonical';
 declare module 'eslint-plugin-promise';
-declare module 'eslint-plugin-vuejs-accessibility';
 declare module 'eslint-plugin-security';
 
 declare module 'eslint-plugin-unicorn' {

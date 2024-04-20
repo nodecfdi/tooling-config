@@ -5,6 +5,9 @@ import { defineConfig } from '../define_config.js';
 export const unicornConfig = defineConfig({
   files: [allFilesSupported],
   plugins: { unicorn },
+  languageOptions: {
+    ...unicorn.configs['flat/recommended'].languageOptions,
+  },
   rules: {
     ...unicorn.configs['flat/recommended'].rules,
     'unicorn/consistent-destructuring': 'error',

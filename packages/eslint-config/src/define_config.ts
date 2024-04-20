@@ -1,8 +1,11 @@
 export type Rules = NodeCfdiFlatAtomConfig['rules'] | Record<string, string>;
 
-type FixedFlatAtomConfig = Omit<NodeCfdiFlatAtomConfig, 'plugins' | 'rules'> & {
+export type LanguageOptions = NodeCfdiFlatAtomConfig['languageOptions'] | { sourceType?: string };
+
+type FixedFlatAtomConfig = Omit<NodeCfdiFlatAtomConfig, 'plugins' | 'rules' | 'languageOptions'> & {
   plugins?: Record<string, unknown> | null | undefined;
   rules?: Rules;
+  languageOptions?: LanguageOptions;
 };
 
 type FixedFlatArrayConfig = FixedFlatAtomConfig[];

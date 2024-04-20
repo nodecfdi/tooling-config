@@ -21,6 +21,7 @@ export const adonisjsConfig = defineConfig([
       '**/bin/*.ts',
       '**/commands/*.ts',
       '**/app/middleware/*.ts',
+      '**/app/exceptions/*.ts',
     ],
     rules: {
       '@typescript-eslint/require-await': 'off',
