@@ -1,5 +1,12 @@
 # @nodecfdi/eslint-config
 
+## 1.6.6
+
+### Patch Changes - Fix rule stylistic
+
+- fix quote rule stylistic break with prettier
+- remove unnecesary exports of types
+
 ## 1.6.5
 
 ### Patch Changes - Update rules review 12

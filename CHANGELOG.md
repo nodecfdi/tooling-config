@@ -1,5 +1,12 @@
 # @nodecfdi/tooling-config Changelog
 
+## 1.4.3
+
+### Patch Changes - Release eslint v1.6.6
+
+- update rules in eslint fix break rule
+- update exports for eslint-config
+
 ## 1.4.2
 
 ### Patch Changes - Release eslint v1.6.5
