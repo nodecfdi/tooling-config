@@ -30,4 +30,5 @@ export const ignores = [
   '**/composer.json',
   '**/package.json',
   '**/*.min.*',
+  '**/.pnpm-store/**',
 ];

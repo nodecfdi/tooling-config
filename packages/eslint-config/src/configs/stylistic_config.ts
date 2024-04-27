@@ -21,5 +21,7 @@ export const stylisticConfig = defineConfig({
     '@stylistic/semi': ['error', 'always'],
     '@stylistic/no-extra-semi': 'error',
     '@stylistic/comma-spacing': 'error',
+    '@stylistic/quote-props': ['error', 'consistent'],
+    '@stylistic/quotes': ['error', 'single'],
   },
 });

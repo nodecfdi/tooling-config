@@ -164,7 +164,7 @@ export const typescriptConfig = defineConfig([
     },
   },
   {
-    files: ['**/*.d.ts'],
+    files: ['**/types.ts', '**/types/**/*.ts', '**/*.d.ts'],
     rules: {
       '@typescript-eslint/consistent-type-definitions': 'off',
       '@typescript-eslint/no-empty-interface': 'off',

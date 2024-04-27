@@ -16,7 +16,6 @@ import { securityConfig } from './configs/security_config.js';
 import { simpleImportSortConfig } from './configs/simple_import_sort_config.js';
 import { sonarjsConfig } from './configs/sonarjs_config.js';
 import { stylisticConfig } from './configs/stylistic_config.js';
-import { tsdocConfig } from './configs/tsdoc_config.js';
 import { typescriptConfig } from './configs/typescript_config.js';
 import { unicornConfig } from './configs/unicorn_config.js';
 import { vitestConfig } from './configs/vitest_config.js';
@@ -43,7 +42,7 @@ const getLanguageOptionsTypescript = <T = NodeCfdiFlatAtomConfig['languageOption
 
 export const getExportableConfig = (userConfigPrefers?: NodecfdiSettings): FlatESLintConfig[] => {
   const userConfigChoices = userConfigPrefers ?? {
-    vitest: true,
+    vitest: false,
     adonisjs: false,
     vue: false,
   };
@@ -57,7 +56,6 @@ export const getExportableConfig = (userConfigPrefers?: NodecfdiSettings): FlatE
     },
     ...typescriptConfig,
     canonicalConfig,
-    tsdocConfig,
     eslintBaseConfig,
     unicornConfig,
     simpleImportSortConfig,
@@ -73,7 +71,13 @@ export const getExportableConfig = (userConfigPrefers?: NodecfdiSettings): FlatE
   ];
 
   if (userConfigChoices.vitest) {
-    exportableConfig.push(vitestConfig(userConfigChoices));
+    exportableConfig.push(vitestConfig(userConfigChoices), {
+      files: ['tests/**/*.spec.ts'],
+      rules: {
+        'import-x/no-unassigned-import': 'off',
+        'sonarjs/no-duplicate-string': 'off',
+      },
+    });
   }
 
   if (userConfigChoices.adonisjs) {

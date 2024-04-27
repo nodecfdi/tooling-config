@@ -32,7 +32,7 @@ export const adonisjsConfig = defineConfig([
     },
   },
   {
-    files: ['**/types.ts', '**/types/**/*.ts', '**/config/*.ts', '**/src/extensions/**/*.ts'],
+    files: ['**/config/*.ts', '**/src/extensions/**/*.ts'],
     rules: {
       '@typescript-eslint/consistent-type-definitions': 'off',
       '@typescript-eslint/no-empty-interface': 'off',
@@ -47,7 +47,7 @@ export const adonisjsConfig = defineConfig([
     },
   },
   {
-    files: ['**/mixins/**/*.ts'],
+    files: ['**/mixins/**/*.ts', '**/tests/**/*.ts'],
     rules: {
       '@typescript-eslint/explicit-function-return-type': 'off',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
@@ -64,12 +64,6 @@ export const adonisjsConfig = defineConfig([
     files: ['**/define_config.ts'],
     rules: {
       '@typescript-eslint/require-await': 'off',
-    },
-  },
-  {
-    files: ['**/tests/**/*.ts'],
-    rules: {
-      '@typescript-eslint/explicit-module-boundary-types': 'off',
     },
   },
 ]);
