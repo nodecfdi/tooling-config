@@ -32,9 +32,9 @@ Las contribuciones con bienvenidas. Por favor lee [CONTRIBUTING][] para más det
 
 The `@nodecfdi/tooling-config` monorepo is copyright © [NodeCfdi](https://github.com/nodecfdi) - [OcelotlStudio](https://ocelotlstudio.com) and licensed for use under the MIT License (MIT). Please see [LICENSE][] for more information.
 
-[contributing]: https://github.com/nodecfdi/tooling-config/blob/main/CONTRIBUTING.md
+[contributing]: https://github.com/nodecfdi/.github/blob/main/docs/CONTRIBUTING.md
 [changelog]: https://github.com/nodecfdi/tooling-config/blob/main/CHANGELOG.md
 [discord]: https://discord.gg/AsqX8fkW2k
-[license]: https://github.com/nodecfdi/tooling-config/blob/main/LICENSE
+[license]: https://github.com/nodecfdi/tooling-config/blob/main/LICENSE.md
 [badge-discord]: https://img.shields.io/discord/459860554090283019?logo=discord
 [badge-license]: https://img.shields.io/github/license/nodecfdi/tooling-config.svg?logo=open-source-initiative
