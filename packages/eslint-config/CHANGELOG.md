@@ -1,5 +1,16 @@
 # @nodecfdi/eslint-config
 
+## 1.6.5
+
+### Patch Changes - Update rules review 12
+
+- update docs files for latest changes in organization
+- remove usage of plugin tsdoc, breaks rules with jsdoc
+- update rules for stylistic add rules for better quotes
+- update rules for typescript add rules for types
+- update rules for adonisjs config remove declaration of types
+- update dependencies
+
 ## 1.6.4
 
 ### Patch Changes - Update rules review 11
