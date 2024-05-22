@@ -1,5 +1,13 @@
 # @nodecfdi/eslint-config
 
+## 1.6.7
+
+### Patch Changes - Update rules review 13
+
+- update rules for unicorn
+- update rules for adonisjs config disable sonarjs rule for seeders
+- update dependencies
+
 ## 1.6.6
 
 ### Patch Changes - Fix rule stylistic
