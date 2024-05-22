@@ -39,24 +39,24 @@
   "dependencies": {
     "@adonisjs/eslint-plugin": "^1.3.0",
     "@eslint-community/eslint-plugin-eslint-comments": "^4.3.0",
-    "@eslint/js": "^9.1.1",
+    "@eslint/js": "^9.3.0",
     "@regru/eslint-plugin-prefer-early-return": "^1.0.0",
-    "@stylistic/eslint-plugin": "^1.7.2",
+    "@stylistic/eslint-plugin": "^2.1.0",
     "eslint-config-flat-gitignore": "^0.1.5",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-arrow-return-style": "^1.3.0",
     "eslint-plugin-canonical": "^4.18.0",
     "eslint-plugin-import-x": "^0.5.0",
     "eslint-plugin-promise": "^6.1.1",
-    "eslint-plugin-regexp": "^2.5.0",
+    "eslint-plugin-regexp": "^2.6.0",
     "eslint-plugin-security": "^3.0.0",
     "eslint-plugin-simple-import-sort": "^12.1.0",
-    "eslint-plugin-sonarjs": "^0.25.1",
-    "eslint-plugin-unicorn": "^52.0.0",
+    "eslint-plugin-sonarjs": "^1.0.3",
+    "eslint-plugin-unicorn": "^53.0.0",
     "eslint-plugin-vitest": "0.4.2-beta.3",
-    "eslint-plugin-vue": "^9.25.0",
+    "eslint-plugin-vue": "^9.26.0",
     "eslint-plugin-vuejs-accessibility": "^2.3.0",
-    "typescript-eslint": "^7.7.1",
+    "typescript-eslint": "^7.10.0",
     "vue-eslint-parser": "^9.4.2"
   },
   "peerDependencies": {
@@ -64,6 +64,6 @@
     "typescript": "^5.4.3"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=20"
   }
 }
