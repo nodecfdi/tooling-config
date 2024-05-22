@@ -29,6 +29,7 @@ export const adonisjsConfig = defineConfig([
       '@typescript-eslint/explicit-module-boundary-types': 'off',
       '@typescript-eslint/no-floating-promises': 'off',
       'unicorn/no-anonymous-default-export': 'off',
+      'sonarjs/no-duplicate-string': 'off',
     },
   },
   {
