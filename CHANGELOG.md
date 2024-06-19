@@ -1,5 +1,13 @@
 # @nodecfdi/tooling-config Changelog
 
+## 1.5.0
+
+## Minor Changes - Release eslint v1.7.0
+
+- add default package manager for corepack
+- add new config rules in eslint
+- update dependencies
+
 ## 1.4.4
 
 ### Patch Changes - Release eslint v1.6.7
