@@ -9,6 +9,7 @@ import { commentsConfig } from './configs/comments_config.js';
 import { earlyReturnConfig } from './configs/early_return_config.js';
 import { eslintBaseConfig } from './configs/eslint_base_config.js';
 import { importConfig } from './configs/import_config.js';
+import { overridesConfig } from './configs/overrides_config.js';
 import { prettierConfig } from './configs/prettier_config.js';
 import { promiseConfig } from './configs/promise_config.js';
 import { regexpConfig } from './configs/regexp_config.js';
@@ -60,7 +61,6 @@ export const getExportableConfig = (userConfigPrefers?: NodecfdiSettings): FlatE
     unicornConfig,
     simpleImportSortConfig,
     regexpConfig,
-    stylisticConfig,
     earlyReturnConfig,
     sonarjsConfig,
     arrowReturnStyleConfig,
@@ -68,6 +68,7 @@ export const getExportableConfig = (userConfigPrefers?: NodecfdiSettings): FlatE
     commentsConfig,
     promiseConfig,
     securityConfig,
+    stylisticConfig,
   ];
 
   if (userConfigChoices.vitest) {
@@ -88,7 +89,7 @@ export const getExportableConfig = (userConfigPrefers?: NodecfdiSettings): FlatE
     exportableConfig.push(...vueConfig, ...vueAccessibilityConfig);
   }
 
-  exportableConfig.push(...prettierConfig);
+  exportableConfig.push(...prettierConfig, ...overridesConfig);
 
   const hasIgnoresRecommended =
     userConfigChoices.ignores?.recommended === undefined

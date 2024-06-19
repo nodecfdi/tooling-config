@@ -48,7 +48,7 @@ export const adonisjsConfig = defineConfig([
     },
   },
   {
-    files: ['**/mixins/**/*.ts', '**/tests/**/*.ts'],
+    files: ['**/mixins/**/*.ts'],
     rules: {
       '@typescript-eslint/explicit-function-return-type': 'off',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
