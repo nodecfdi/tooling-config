@@ -1,5 +1,15 @@
 # @nodecfdi/eslint-config
 
+## 1.7.0
+
+### Minor Changes - Add new config overrides
+
+- add new config overrides
+- update rules for adonis
+- update rules for vue
+- update handle types for latest update dependencies
+- update dependencies
+
 ## 1.6.7
 
 ### Patch Changes - Update rules review 13
