@@ -1,5 +1,12 @@
 # @nodecfdi/eslint-config
 
+## 1.7.1
+
+### Patch Changes - Update dependencies
+
+- minor update code (maintenance)
+- update dependencies
+
 ## 1.7.0
 
 ### Minor Changes - Add new config overrides
