@@ -1,6 +1,6 @@
 {
   "name": "@nodecfdi/tooling-configs",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Tooling configs for NodeCfdi projects",
   "keywords": [
     "tooling",
