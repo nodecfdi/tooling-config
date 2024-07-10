@@ -18,19 +18,7 @@ export const importConfig = defineConfig([
       'import-x/dynamic-import-chunkname': 'off',
       'import-x/export': 'error',
       'import-x/exports-last': 'off',
-      'import-x/extensions': [
-        'error',
-        'never',
-        {
-          ignorePackages: true,
-          pattern: {
-            graphql: 'always',
-            json: 'always',
-            svg: 'always',
-            vue: 'always',
-          },
-        },
-      ],
+      'import-x/extensions': ['error', 'ignorePackages'],
       'import-x/first': 'error',
       'import-x/group-exports': 'off',
       'import-x/max-dependencies': 'off',
