@@ -1,5 +1,13 @@
 # @nodecfdi/eslint-config
 
+## 1.8.0
+
+### Minor Changes - Support to vue block order
+
+- add support to eslint vue block order
+- update rules of import-x, ignore package librarys
+- update dependencies
+
 ## 1.7.1
 
 ### Patch Changes - Update dependencies
