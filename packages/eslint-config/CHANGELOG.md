@@ -1,5 +1,12 @@
 # @nodecfdi/eslint-config
 
+## 1.8.1
+
+### Patch Changes - Resolve problem with plugin import
+
+- update rule extensions for support with imports in package.json file
+- update dependencies
+
 ## 1.8.0
 
 ### Minor Changes - Support to vue block order
