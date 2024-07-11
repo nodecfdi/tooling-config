@@ -18,7 +18,8 @@ export const importConfig = defineConfig([
       'import-x/dynamic-import-chunkname': 'off',
       'import-x/export': 'error',
       'import-x/exports-last': 'off',
-      'import-x/extensions': ['error', 'ignorePackages'],
+      // Disable for issue with imports in packages
+      'import-x/extensions': 'off',
       'import-x/first': 'error',
       'import-x/group-exports': 'off',
       'import-x/max-dependencies': 'off',
