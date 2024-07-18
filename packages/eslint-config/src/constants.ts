@@ -23,6 +23,7 @@ export const ignores = [
   `**/eslint.config.{${allJsExtensions}}`, // we currently cannot lint the eslint.config.js itself. It is currently only provided as a .js file and this config currently only supports .ts files. Therefore, eslint.config.js can only be re-enabled once this config support pure .js files too, or the ESLint team support the eslint.config.ts file.
   `**/prettier.config.{${allJsExtensions}}`,
   `**/commitlint.config.{${allJsExtensions}}`,
+  `**/vite.config.{${allJsExtensions}}`,
   '**/package-lock.json',
   '**/pnpm-lock.yaml',
   '**/yarn.lock',

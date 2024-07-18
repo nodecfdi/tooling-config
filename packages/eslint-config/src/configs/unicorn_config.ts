@@ -16,6 +16,7 @@ export const unicornConfig = defineConfig({
       'error',
       {
         case: 'snakeCase',
+        ignore: [/^vite-env\.d\.ts/i],
       },
     ],
     'unicorn/no-null': 'off',
