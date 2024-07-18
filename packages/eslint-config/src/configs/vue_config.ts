@@ -38,6 +38,15 @@ export const vueConfig = defineConfig([
       'vue/static-class-names-order': 'off',
       // Disable usage in vue files
       'sonarjs/no-duplicate-string': 'off',
+      'unicorn/filename-case': [
+        'error',
+        {
+          cases: {
+            snakeCase: true,
+            pascalCase: true,
+          },
+        },
+      ],
     },
   },
   {
