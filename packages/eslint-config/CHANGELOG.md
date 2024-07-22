@@ -1,5 +1,13 @@
 # @nodecfdi/eslint-config
 
+## 1.9.1
+
+### Patch Changes - Better support on vue files and vite
+
+- provide better handling vue configuration
+- revert ignore vite config and dts on vite projects
+- update dependencies
+
 ## 1.9.0
 
 ### Minor Changes - Support to filename PascalCase on vue files
