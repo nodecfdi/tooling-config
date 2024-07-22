@@ -72,13 +72,7 @@ export const getExportableConfig = (userConfigPrefers?: NodecfdiSettings): FlatE
   ];
 
   if (userConfigChoices.vitest) {
-    exportableConfig.push(vitestConfig(userConfigChoices), {
-      files: ['tests/**/*.spec.ts'],
-      rules: {
-        'import-x/no-unassigned-import': 'off',
-        'sonarjs/no-duplicate-string': 'off',
-      },
-    });
+    exportableConfig.push(vitestConfig(userConfigChoices));
   }
 
   if (userConfigChoices.adonisjs) {

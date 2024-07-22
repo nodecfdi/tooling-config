@@ -50,5 +50,7 @@ export const vitestConfig = (prefs: NodecfdiSettings): NodeCfdiFlatAtomConfig =>
       'vitest/require-hook': 'error',
       'vitest/require-to-throw-message': 'error',
       'vitest/require-top-level-describe': 'error',
+      'import-x/no-unassigned-import': 'off',
+      'sonarjs/no-duplicate-string': 'off',
     },
   });
