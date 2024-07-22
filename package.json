@@ -29,9 +29,9 @@
     "@nodecfdi/tsconfig": "workspace:*",
     "eslint": "^8.57.0",
     "eslint-define-config": "^2.1.0",
-    "husky": "^9.0.11",
+    "husky": "^9.1.1",
     "is-in-ci": "^0.1.0",
-    "prettier": "^3.3.2",
+    "prettier": "^3.3.3",
     "typescript": "^5.5.3"
   },
   "pnpm": {
@@ -51,5 +51,5 @@
   "engines": {
     "node": ">=20.6"
   },
-  "packageManager": "pnpm@9.5.0"
+  "packageManager": "pnpm@9.6.0"
 }
