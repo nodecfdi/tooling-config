@@ -25,10 +25,10 @@ import { vueConfig } from './configs/vue_config.js';
 import { ignores } from './constants.js';
 import { type NodecfdiSettings } from './types.js';
 
-const getLanguageOptionsTypescript = <T = NodeCfdiFlatAtomConfig['languageOptions']>(
+const getLanguageOptionsTypescript = (
   userChosenTsConfig?: string | string[],
   vueSupport = false,
-): T => {
+): NodeCfdiFlatAtomConfig['languageOptions'] => {
   return {
     parser: vueSupport ? vueParser : tsParser,
     parserOptions: {
@@ -38,7 +38,7 @@ const getLanguageOptionsTypescript = <T = NodeCfdiFlatAtomConfig['languageOption
       project: userChosenTsConfig || true,
       extraFileExtensions: vueSupport ? ['.vue'] : undefined,
     },
-  } as T;
+  } as NodeCfdiFlatAtomConfig['languageOptions'];
 };
 
 export const getExportableConfig = (userConfigPrefers?: NodecfdiSettings): FlatESLintConfig[] => {
