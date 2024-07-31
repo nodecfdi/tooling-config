@@ -29,10 +29,10 @@
     "@nodecfdi/tsconfig": "workspace:*",
     "eslint": "^8.57.0",
     "eslint-define-config": "^2.1.0",
-    "husky": "^9.1.1",
-    "is-in-ci": "^0.1.0",
+    "husky": "^9.1.4",
+    "is-in-ci": "^1.0.0",
     "prettier": "^3.3.3",
-    "typescript": "^5.5.3"
+    "typescript": "^5.5.4"
   },
   "pnpm": {
     "peerDependencyRules": {
