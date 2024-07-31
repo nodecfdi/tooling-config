@@ -67,4 +67,10 @@ export const adonisjsConfig = defineConfig([
       '@typescript-eslint/require-await': 'off',
     },
   },
+  {
+    files: ['**/inertia/**/*.ts', '**/inertia/**/*.vue'],
+    rules: {
+      '@typescript-eslint/triple-slash-reference': 'off',
+    },
+  },
 ]);
