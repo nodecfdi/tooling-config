@@ -1,5 +1,13 @@
 # @nodecfdi/eslint-config
 
+## 1.9.2
+
+### Patch Changes - Ignore references on adonis inertia
+
+- update config for typescript
+- update adonis rules
+- update dependencies
+
 ## 1.9.1
 
 ### Patch Changes - Better support on vue files and vite
