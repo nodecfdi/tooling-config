@@ -135,6 +135,7 @@ const typescriptHandPickedRules: Rules = {
       allowWithDecorator: true,
     },
   ],
+  '@typescript-eslint/no-empty-object-type': ['error', { allowInterfaces: 'always' }],
 };
 
 const tseslintRules = [...configs.strictTypeChecked, ...configs.stylisticTypeChecked]

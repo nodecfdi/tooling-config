@@ -73,4 +73,10 @@ export const adonisjsConfig = defineConfig([
       '@typescript-eslint/triple-slash-reference': 'off',
     },
   },
+  {
+    files: ['**/app/middleware/*.ts'],
+    rules: {
+      '@typescript-eslint/no-unsafe-return': 'off',
+    },
+  },
 ]);
