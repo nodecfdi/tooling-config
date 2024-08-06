@@ -1,5 +1,13 @@
 # @nodecfdi/eslint-config
 
+## 1.9.3
+
+### Patch Changes - Update rules for adonis and typescript
+
+- update rules for adonisjs and typescript
+- update dependencies
+- maintenance code
+
 ## 1.9.2
 
 ### Patch Changes - Ignore references on adonis inertia
