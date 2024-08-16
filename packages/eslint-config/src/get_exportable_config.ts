@@ -1,6 +1,6 @@
-import tsParser from '@typescript-eslint/parser';
 import getGitignorePatterns from 'eslint-config-flat-gitignore';
 import { type FlatESLintConfig } from 'eslint-define-config';
+import tseslint from 'typescript-eslint';
 import vueParser from 'vue-eslint-parser';
 import { adonisjsConfig } from './configs/adonisjs_config.js';
 import { arrowReturnStyleConfig } from './configs/arrow_return_style_config.js';
@@ -22,7 +22,7 @@ import { unicornConfig } from './configs/unicorn_config.js';
 import { vitestConfig } from './configs/vitest_config.js';
 import { vueAccessibilityConfig } from './configs/vue_accessibility_config.js';
 import { vueConfig } from './configs/vue_config.js';
-import { ignores, jsExtensions } from './constants.js';
+import { ignores } from './constants.js';
 import { type NodecfdiSettings } from './types.js';
 
 const getLanguageOptionsTypescript = (
@@ -31,12 +31,12 @@ const getLanguageOptionsTypescript = (
   tsconfigRootDir?: string,
 ): NodeCfdiFlatAtomConfig['languageOptions'] => {
   let languageOptions: {
-    parser: typeof vueParser | typeof tsParser;
+    parser: typeof vueParser | typeof tseslint.parser;
     parserOptions: Record<string, unknown>;
   } = {
-    parser: vueSupport ? vueParser : tsParser,
+    parser: vueSupport ? vueParser : tseslint.parser,
     parserOptions: {
-      parser: vueSupport ? tsParser : undefined,
+      parser: vueSupport ? tseslint.parser : undefined,
       ecmaVersion: 'latest',
       sourceType: 'module',
       extraFileExtensions: vueSupport ? ['.vue'] : undefined,
@@ -48,9 +48,7 @@ const getLanguageOptionsTypescript = (
         ...languageOptions,
         parserOptions: {
           ...languageOptions.parserOptions,
-          projectService: {
-            allowDefaultProject: jsExtensions.map((extension) => `*${extension}`),
-          },
+          projectService: true,
           tsconfigRootDir,
         },
       }

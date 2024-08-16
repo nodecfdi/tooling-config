@@ -8,6 +8,8 @@ export const allJsExtensions = 'js,mjs,cjs,ts,mts,cts';
 
 export const supportedFileTypes = `**/*.{${allJsExtensions}}`;
 
+export const supportedFileTypeJs = jsExtensions.map((extension) => `**/*${extension}`);
+
 export const allFilesSupported = `**/*.{${allJsExtensions},d.ts,vue}`;
 
 export const ignores = [

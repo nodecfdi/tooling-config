@@ -1,6 +1,6 @@
 import eslintRecommended from '@eslint/js';
 import { configs, plugin } from 'typescript-eslint';
-import { allFilesSupported } from '../constants.js';
+import { allFilesSupported, supportedFileTypeJs } from '../constants.js';
 import { defineConfig, type Rules } from '../define_config.js';
 
 const tsNamingConventionRule: Rules = {
@@ -171,5 +171,9 @@ export const typescriptConfig = defineConfig([
       '@typescript-eslint/no-empty-interface': 'off',
       '@typescript-eslint/no-shadow': 'off',
     },
+  },
+  {
+    files: [...supportedFileTypeJs],
+    ...(configs.disableTypeChecked as NodeCfdiFlatConfig),
   },
 ]);
