@@ -1,5 +1,11 @@
 # @nodecfdi/tsconfig
 
+## 1.6.0
+
+### Minor Changes - Added missing compiler option strict
+
+- fix: resolve problem with missing compiler option strict
+
 ## 1.5.0
 
 ### Minor Changes - Added support to resolve json files
