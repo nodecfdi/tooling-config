@@ -1,5 +1,14 @@
 # @nodecfdi/eslint-config
 
+## 1.10.0
+
+### Minor Changes - Support to projectService tseslint
+
+- add support to use tseslint project service
+- update rules for adonis
+- update rules for tests files (vitest and ignores)
+- update dependencies
+
 ## 1.9.3
 
 ### Patch Changes - Update rules for adonis and typescript
