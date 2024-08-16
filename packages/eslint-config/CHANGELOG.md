@@ -1,5 +1,11 @@
 # @nodecfdi/eslint-config
 
+## 1.10.1
+
+### Patch Changes
+
+- fix: resolve handle typecheck for none js
+
 ## 1.10.0
 
 ### Minor Changes - Support to projectService tseslint
