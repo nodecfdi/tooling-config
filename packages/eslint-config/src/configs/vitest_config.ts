@@ -24,7 +24,8 @@ export const vitestConfig = (prefs: NodecfdiSettings): NodeCfdiFlatAtomConfig =>
       'vitest/no-conditional-expect': 'error',
       'vitest/no-conditional-tests': 'error',
       'vitest/no-disabled-tests': 'error',
-      'vitest/no-done-callback': 'error',
+      // Its deprecated in vitest
+      'vitest/no-done-callback': 'off',
       'vitest/no-duplicate-hooks': 'error',
       'vitest/no-focused-tests': 'error',
       'vitest/no-standalone-expect': 'error',

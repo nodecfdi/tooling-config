@@ -17,6 +17,7 @@ export const overridesConfig = defineConfig([
       'unicorn/no-anonymous-default-export': 'off',
       'import-x/no-unassigned-import': 'off',
       'sonarjs/no-duplicate-string': 'off',
+      '@typescript-eslint/unbound-method': 'off',
     },
   },
 ]);

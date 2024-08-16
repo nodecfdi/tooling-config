@@ -79,4 +79,10 @@ export const adonisjsConfig = defineConfig([
       '@typescript-eslint/no-unsafe-return': 'off',
     },
   },
+  {
+    files: ['**/app/controles/**/*.ts'],
+    rules: {
+      '@typescript-eslint/explicit-module-boundary-types': 'off',
+    },
+  },
 ]);
