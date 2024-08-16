@@ -71,6 +71,10 @@ type NodecfdiSettings = {
    */
   vue?: boolean;
   /**
+   * Experimental support to use tseslint projectService pass root dirname
+   */
+  experimentalProjectService?: string;
+  /**
    * This parameter allows you to override the paths for some Nodecfdi settings.
    */
   pathsOverrides?: {
@@ -101,16 +105,4 @@ type NodecfdiSettings = {
     additional?: string[];
   };
 };
-```
-
-## Soporte VSCode
-
-Para que la extensión VSCode ESLint funcione correctamente, necesitaremos habilitar algunas configuraciones. Es recomendable habilitarlos en el nivel del espacio de trabajo, es decir, en la raíz del proyecto en `.vscode/settings.json`
-
-La compatibilidad con ESLint `FlatConfig` actualmente no está habilitada de forma predeterminada. Debe habilitarse manualmente así:
-
-```json
-{
-  "eslint.experimental.useFlatConfig": true
-}
 ```

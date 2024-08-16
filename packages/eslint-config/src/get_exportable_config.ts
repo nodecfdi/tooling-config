@@ -1,6 +1,6 @@
+import tsParser from '@typescript-eslint/parser';
 import getGitignorePatterns from 'eslint-config-flat-gitignore';
 import { type FlatESLintConfig } from 'eslint-define-config';
-import { parser as tsParser } from 'typescript-eslint';
 import vueParser from 'vue-eslint-parser';
 import { adonisjsConfig } from './configs/adonisjs_config.js';
 import { arrowReturnStyleConfig } from './configs/arrow_return_style_config.js';
@@ -22,23 +22,47 @@ import { unicornConfig } from './configs/unicorn_config.js';
 import { vitestConfig } from './configs/vitest_config.js';
 import { vueAccessibilityConfig } from './configs/vue_accessibility_config.js';
 import { vueConfig } from './configs/vue_config.js';
-import { ignores } from './constants.js';
+import { ignores, jsExtensions } from './constants.js';
 import { type NodecfdiSettings } from './types.js';
 
 const getLanguageOptionsTypescript = (
   userChosenTsConfig?: string | string[],
   vueSupport = false,
+  tsconfigRootDir?: string,
 ): NodeCfdiFlatAtomConfig['languageOptions'] => {
-  return {
+  let languageOptions: {
+    parser: typeof vueParser | typeof tsParser;
+    parserOptions: Record<string, unknown>;
+  } = {
     parser: vueSupport ? vueParser : tsParser,
     parserOptions: {
       parser: vueSupport ? tsParser : undefined,
       ecmaVersion: 'latest',
       sourceType: 'module',
-      project: userChosenTsConfig || true,
       extraFileExtensions: vueSupport ? ['.vue'] : undefined,
     },
-  } as NodeCfdiFlatAtomConfig['languageOptions'];
+  };
+
+  languageOptions = tsconfigRootDir
+    ? {
+        ...languageOptions,
+        parserOptions: {
+          ...languageOptions.parserOptions,
+          projectService: {
+            allowDefaultProject: jsExtensions.map((extension) => `*${extension}`),
+          },
+          tsconfigRootDir,
+        },
+      }
+    : {
+        ...languageOptions,
+        parserOptions: {
+          ...languageOptions.parserOptions,
+          project: userChosenTsConfig || true,
+        },
+      };
+
+  return languageOptions as NodeCfdiFlatAtomConfig['languageOptions'];
 };
 
 export const getExportableConfig = (userConfigPrefers?: NodecfdiSettings): FlatESLintConfig[] => {
@@ -46,6 +70,7 @@ export const getExportableConfig = (userConfigPrefers?: NodecfdiSettings): FlatE
     vitest: false,
     adonisjs: false,
     vue: false,
+    experimentalProjectService: undefined,
   };
 
   const exportableConfig: NodeCfdiFlatConfig = [
@@ -53,6 +78,7 @@ export const getExportableConfig = (userConfigPrefers?: NodecfdiSettings): FlatE
       languageOptions: getLanguageOptionsTypescript(
         userConfigChoices.pathsOverrides?.tsconfigLocation,
         userConfigChoices.vue,
+        userConfigChoices.experimentalProjectService,
       ),
     },
     ...typescriptConfig,

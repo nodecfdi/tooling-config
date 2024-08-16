@@ -12,6 +12,10 @@ export type NodecfdiSettings = {
    */
   vue?: boolean;
   /**
+   * Experimental support to use tseslint projectService
+   */
+  experimentalProjectService?: string;
+  /**
    * This parameter allows you to override the paths for some Nodecfdi settings.
    */
   pathsOverrides?: {
