@@ -4,7 +4,6 @@ import tseslint from 'typescript-eslint';
 import vueParser from 'vue-eslint-parser';
 import { adonisjsConfig } from './configs/adonisjs_config.js';
 import { arrowReturnStyleConfig } from './configs/arrow_return_style_config.js';
-import { canonicalConfig } from './configs/canonical_config.js';
 import { commentsConfig } from './configs/comments_config.js';
 import { earlyReturnConfig } from './configs/early_return_config.js';
 import { eslintBaseConfig } from './configs/eslint_base_config.js';
@@ -80,7 +79,6 @@ export const getExportableConfig = (userConfigPrefers?: NodecfdiSettings): FlatE
       ),
     },
     ...typescriptConfig,
-    canonicalConfig,
     eslintBaseConfig,
     unicornConfig,
     simpleImportSortConfig,

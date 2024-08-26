@@ -1,4 +1,3 @@
-/* eslint-disable sonarjs/no-duplicate-string */
 import { allFilesSupported } from '../constants.js';
 import { defineConfig } from '../define_config.js';
 

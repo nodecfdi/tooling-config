@@ -10,4 +10,9 @@ export const sonarjsConfig = defineConfig({
     'sonarjs/cognitive-complexity': 'off',
     'sonarjs/prefer-immediate-return': 'off',
   },
+  settings: {
+    react: {
+      version: '999.999.999',
+    },
+  },
 });
