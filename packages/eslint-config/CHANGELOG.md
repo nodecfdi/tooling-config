@@ -1,5 +1,11 @@
 # @nodecfdi/eslint-config
 
+## 1.10.3
+
+### Patch Changes - Resolve problem unicor and sonarjs
+
+- resolve break rules unicorn and sonarjs
+
 ## 1.10.2
 
 ### Patch Changes - Resolve problem with canonical and sonarjs
