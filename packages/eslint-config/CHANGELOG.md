@@ -1,5 +1,11 @@
 # @nodecfdi/eslint-config
 
+## 1.10.4
+
+### Patch Changes
+
+- resolve build dist files
+
 ## 1.10.3
 
 ### Patch Changes - Resolve problem unicor and sonarjs
