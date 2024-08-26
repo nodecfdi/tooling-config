@@ -1,5 +1,13 @@
 # @nodecfdi/eslint-config
 
+## 1.10.2
+
+### Patch Changes - Resolve problem with canonical and sonarjs
+
+- clean code
+- resolve problem with sonarjs and canonical config
+- update dependencies
+
 ## 1.10.1
 
 ### Patch Changes
