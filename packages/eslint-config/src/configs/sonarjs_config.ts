@@ -9,6 +9,18 @@ export const sonarjsConfig = defineConfig({
     ...sonarjs.configs.recommended.rules,
     'sonarjs/cognitive-complexity': 'off',
     'sonarjs/prefer-immediate-return': 'off',
+    'sonarjs/function-return-type': 'off',
+    'sonarjs/todo-tag': 'warn',
+    'sonarjs/new-cap': 'off',
+    'sonarjs/no-os-command-from-path': 'off',
+    'sonarjs/slow-regex': 'off',
+    'sonarjs/sonar-no-unused-vars': 'off',
+    'sonarjs/no-commented-code': 'off',
+    'sonarjs/no-misused-promises': 'off',
+    'sonarjs/no-hardcoded-credentials': 'off',
+    'sonarjs/no-base-to-string': 'off',
+    'sonarjs/different-types-comparison': 'off',
+    'sonarjs/no-vue-bypass-sanitization': 'off',
   },
   settings: {
     react: {

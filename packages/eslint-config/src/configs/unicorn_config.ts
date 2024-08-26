@@ -35,5 +35,7 @@ export const unicornConfig = defineConfig({
     'unicorn/prefer-switch': ['error', { emptyDefaultCase: 'do-nothing-comment' }],
     // Disable prevent-abbrevations, its necessary in frameworks
     'unicorn/prevent-abbreviations': 'off',
+    // Disable because not work with others function like then
+    'unicorn/no-thenable': 'off',
   },
 });
